@@ -72,18 +72,115 @@
     {{-- store products section --}}
 
 
+    <div class="row  g-4 col-md-12 d-flex justify-content-evenly">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id1354441996?b=1&k=20&m=1354441996&s=170667a&w=0&h=O4JDagXhIh1N13PNN6G4_L5KB5QPZryin7FOrZnzYvc="
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 style="font-family: 'Lemonada', cursive; font-weight:bolder" class="card-title right">جلاية سوبر
+                    </h5><br>
+                    <p style="text-align:right;"><strong>السعر</strong>&nbsp:77دأ</p>
+                    <p style="text-align:right;"><strong>الكمية المتوفرة</strong>&nbsp:6</p>
+                    
+                    <!-- Button trigger modal -->
+                    <button style="background-color: #1e4356; color:white" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        التفاصيل
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="row store-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
 
-        <div class="col-lg-4 col-md-6 store-wrap filter-web">
-            <div class="store-item">
-                <a href="store"><img
-                        src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                        class="img-fluid" alt=""><a>
-                        <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                            <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
-                            <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
-                        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ملابس خريفية </h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -91,9 +188,27 @@
 
 
 
-
-
-
-
-
+    <!-- Modal -->
+    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                class="card-img-top" alt="...">
+                <div class="modal-header">
+                    <h5 style="font-family:'Lemonada', cursive; font-weight:bolder;" class="right" id="staticBackdropLabel">جلاية سوبر</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="right"><strong>:الوصف</strong></p>
+                    <p class="card-text right">وصف المنتج مع القليبل من الكلام ومحدود بعدد حروف معين للحفاظ على التناسق </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

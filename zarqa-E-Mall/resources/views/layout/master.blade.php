@@ -31,6 +31,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lemonada&family=Mada:wght@200&family=Scheherazade+New:wght@700&display=swap"
         rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -53,10 +56,11 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i></li><span style="color:white ;'Lemonada', cursive;">السلة</span></a>
-                    <li><a  href="#" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
-                    <li><a  href="contact" style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
-                    <li><a  href="about" style="font-family: 'Lemonada', cursive;">من نحن</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></li><span
+                        style="color:white ;'Lemonada', cursive;">السلة</span></a>
+                    <li><a href="#" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
+                    <li><a href="contact" style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
+                    <li><a href="about" style="font-family: 'Lemonada', cursive;">من نحن</a></li>
                     <li><a class="active" href="index" style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
 
                     </li>
@@ -162,6 +166,10 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
