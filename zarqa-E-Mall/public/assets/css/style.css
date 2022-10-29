@@ -18,6 +18,9 @@ color:white;
 .nav-font{
   font-family: 'Lemonada', cursive;
 }
+.right{
+  text-align: right;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
