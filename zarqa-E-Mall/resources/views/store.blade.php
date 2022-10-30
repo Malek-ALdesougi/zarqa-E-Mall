@@ -82,9 +82,10 @@
                     </h5><br>
                     <p style="text-align:right;"><strong>السعر</strong>&nbsp:77دأ</p>
                     <p style="text-align:right;"><strong>الكمية المتوفرة</strong>&nbsp:6</p>
-                    
+
                     <!-- Button trigger modal -->
-                    <button style="background-color: #1e4356; color:white" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button style="background-color: #1e4356; color:white" type="button" class="btn"
+                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         التفاصيل
                     </button>
                 </div>
@@ -190,25 +191,26 @@
 
     <!-- Modal -->
     <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                class="card-img-top" alt="...">
-                <div class="modal-header">
-                    <h5 style="font-family:'Lemonada', cursive; font-weight:bolder;" class="right" id="staticBackdropLabel">جلاية سوبر</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="right"><strong>:الوصف</strong></p>
-                    <p class="card-text right">وصف المنتج مع القليبل من الكلام ومحدود بعدد حروف معين للحفاظ على التناسق </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add to cart</button>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        class="card-img-top" alt="...">
+                    <div class="modal-header d-flex justify-content-end">
+                        <h5 style="font-family:'Lemonada', cursive; font-weight:bolder;" class="right"
+                            id="staticBackdropLabel">جلاية سوبر</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="right"><strong>:الوصف</strong></p>
+                        <p class="card-text right">وصف المنتج مع القليبل من الكلام ومحدود بعدد حروف معين للحفاظ على التناسق
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button style="background-color: #1e4356; color:white" type="button" class="btn">Add to cart<i style="margin-left:3px;" class="fas fa-shopping-cart"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

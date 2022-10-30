@@ -33,3 +33,7 @@ Route::get('/contact', function(){
 Route::get('/store', function(){
     return view('/store');
 });
+
+Route::get('profile', function(){
+    return view('profile');
+});
