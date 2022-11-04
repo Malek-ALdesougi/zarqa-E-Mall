@@ -35,10 +35,10 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input style="text-align: right;" type="email" class="form-control" name="email" id="email" placeholder="بريدك الإلكتروني" required>
+                  <input style="text-align: right;" type="email" class="form-control" name="email" id="email" placeholder="البريد الإلكتروني" required>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input style="text-align: right;" type="text" name="name" class="form-control" id="name" placeholder="إسمك" required>
+                  <input style="text-align: right;" type="text" name="name" class="form-control" id="name" placeholder="الإسم" required>
                 </div>
               </div>
               <div class="form-group mt-3">

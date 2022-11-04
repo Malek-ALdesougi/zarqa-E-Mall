@@ -37,3 +37,11 @@ Route::get('/store', function(){
 Route::get('profile', function(){
     return view('profile');
 });
+
+Route::get('/owner', function(){
+    return view('owner');
+});
+
+Route::get('login', function(){
+    return view('login');
+});

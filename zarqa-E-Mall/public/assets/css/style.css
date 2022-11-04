@@ -1,12 +1,6 @@
-/**
-* Template Name: Moderna - v4.10.1
-* Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
 --------------------------------------------------------------*/
 *{
   font-family: 'Lemonada', cursive;
@@ -20,6 +14,12 @@ color:white;
 }
 .right{
   text-align: right;
+}
+.white{
+  color: white;
+}
+.my-font{
+  font-family : 'Lemonada', cursive;
 }
 
 body {
@@ -2364,3 +2364,85 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+
+/*------------------------------- owner fomr style  -----------------------*/
+
+.get-in-touch {
+  max-width: 600px;
+  margin: 5px auto;
+  position: relative;
+  padding: 0% !important;
+
+}
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2.2em;
+  /* line-height: 48px; */
+  padding-bottom: 48px;
+     color: #df1a1a;
+    background: #1e4356;
+    background: -moz-linear-gradient(left,#1e4356  0%,#3e98bb 100%) !important;
+    background: -webkit-linear-gradient(left,#1e4356  0%,#54b6dd 100%) !important;
+    background: linear-gradient(to right,#1e4356  0%,#57bae0  100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #366aa5;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+}
+.contact-form .label {
+  position: absolute;
+  right: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #2a789e;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, 
+  -webkit-transform .2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+   background-image: linear-gradient(125deg,#1e4356,#57bae0);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width:200px;
+  cursor: pointer;
+  border-radius:10px;
+}
+
+
+/* login form styling */
+
+
+
