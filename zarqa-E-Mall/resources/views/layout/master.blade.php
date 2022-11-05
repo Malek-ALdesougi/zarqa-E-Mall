@@ -40,6 +40,13 @@
     {{-- form style cdn --}}
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+
     <!-- =======================================================
   * Template Name: Moderna - v4.10.1
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
@@ -53,18 +60,16 @@
     <header id="header" class="fixed-top d-flex align-items-center header-transparent @yield('new-class', 'none')">
         <div class="container d-flex justify-content-between align-items-center">
 
-
-
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i></li><span
-                        style="color:white ;'Lemonada', cursive;">السلة</span></a>
-                    <li><a href="#" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
+                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdrop" href=""
+                            style="font-family: 'Lemonada', cursive;">السلة</a></li>
+                    <i style="color:white; margin-left:3px;" class="fas fa-shopping-cart"></i>
+                    <li><a href="login" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
                     <li><a href="contact" style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
                     <li><a href="about" style="font-family: 'Lemonada', cursive;">من نحن</a></li>
                     <li><a class="active" href="index" style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
-
                     </li>
                 </ul>
             </nav>
@@ -77,7 +82,106 @@
 
         </div>
     </header>
-    <!-- End Header -->
+    <!-------- End Header ------>
+
+
+    <!------------ Modal AND CART --------------->
+    <div class="modal fade" id="staticBackdrop" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between">
+                    <h5 style="font-weight: 900" class="modal-title my-font my-color" id="staticBackdropLabel">عربةالتسوق</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    {{-- ------------------------ CART START ------------------ --}}
+                    <section class="h-100 w-100 h-custom" style="background-color: #1e4356;">
+                        <div class="container py-5 h-100">
+                            <div class="row d-flex justify-content-center align-items-center h-100">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body p-4">
+
+                                            <div class="row">
+
+                                                <div class="col-lg-12">
+                                                    <h5 class="mb-3"><a href="#!" class="text-body"><i
+                                                                class="fas fa-long-arrow-alt-left me-2"></i>Continue
+                                                            shopping</a></h5>
+                                                    <hr>
+
+                                                    <div style="padding:0%;"
+                                                        class="d-flex justify-content-between align-items-center mb-4">
+                                                        <div>
+                                                            <p class="mb-1">Shopping cart</p>
+                                                            <p class="mb-0">You have 4 items in your cart</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-0"><span class="text-muted">Sort by:</span>
+                                                                <a href="#!" class="text-body">price <i
+                                                                        class="fas fa-angle-down mt-1"></i></a></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card col-md-12 mb-3 p-0">
+                                                        <div style="margin: 0%; padding:0%;" class="card-body w-50">
+                                                            <div style="width:200px"
+                                                                class="d-flex justify-content-between">
+                                                                <div
+                                                                    class="d-flex flex-row align-items-center col-md-12">
+                                                                    <div>
+                                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                                                            class=" rounded-3" alt="Shopping item"
+                                                                            style="width: 55px;">
+                                                                    </div>
+                                                                    <div class="ms-3">
+                                                                        <h5>Iphone 11 pro</h5>
+                                                                        <p class="small mb-0">256GB, Navy Blue</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex flex-row align-items-center">
+                                                                    <div style="width: 50px;">
+                                                                        <h5 class="fw-normal mb-0">2</h5>
+                                                                    </div>
+                                                                    <div style="width: 80px;">
+                                                                        <h5 class="mb-0">$900</h5>
+                                                                    </div>
+                                                                    <a href="#!" style="color: #cecece;"><i
+                                                                            class="fas fa-trash-alt"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal"><p style="display: inline" class="my-font">إغلاق</p></button>
+                    <button type="button" class="btn btn-success"><p style="display:inline" class="my-font">الإنتقال للدفع</p></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     @yield('above-main')
 
@@ -180,6 +284,10 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
 </body>
 
 </html>

@@ -66,28 +66,28 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 store-wrap filter-web">
-                  <div class="store-item">
-                      <a href="store"><img
-                              src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                              class="img-fluid" alt=""><a>
-                              <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                  <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
-                                  <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
-                              </div>
-                  </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 store-wrap filter-web">
-                <div class="store-item">
-                    <a href="store"><img
-                            src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                            class="img-fluid" alt=""><a>
-                            <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
-                                <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
-                            </div>
+                    <div class="store-item">
+                        <a href="store"><img
+                                src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
+                                class="img-fluid" alt=""><a>
+                                <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
+                                    <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
+                                    <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
+                                </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="col-lg-4 col-md-6 store-wrap filter-web">
+                    <div class="store-item">
+                        <a href="store"><img
+                                src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
+                                class="img-fluid" alt=""><a>
+                                <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
+                                    <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
+                                    <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
+                                </div>
+                    </div>
+                </div>
 
 
 

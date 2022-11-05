@@ -4,6 +4,7 @@
 --------------------------------------------------------------*/
 *{
   font-family: 'Lemonada', cursive;
+  scroll-behavior: smooth;
 }
 #search-button{
 background-color: #0d2735;
@@ -21,6 +22,10 @@ color:white;
 .my-font{
   font-family : 'Lemonada', cursive;
 }
+.my-color{
+ color: #1e4356;
+}
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -138,6 +143,7 @@ h6,
 */
 .navbar {
   padding: 0;
+  box-shadow: none !important;
 }
 
 .navbar ul {
