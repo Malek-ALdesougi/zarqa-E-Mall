@@ -60,7 +60,7 @@
     </section>
     <!-- End Contact Section -->
 
-    <div style="text-align: right; height:200px; font-size:50px" class="container col-md-10">
+    <div style="text-align: right; height:200px; font-size:50px" class="container col-md-10 my-font">
       ...شكرا لزيارتكم
     </div>
 

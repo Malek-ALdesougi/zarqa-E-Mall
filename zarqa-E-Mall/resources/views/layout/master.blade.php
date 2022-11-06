@@ -63,7 +63,7 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdrop" href=""
+                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
                             style="font-family: 'Lemonada', cursive;">السلة</a></li>
                     <i style="color:white; margin-left:3px;" class="fas fa-shopping-cart"></i>
                     <li><a href="login" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
@@ -86,12 +86,13 @@
 
 
     <!------------ Modal AND CART --------------->
-    <div class="modal fade" id="staticBackdrop" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdropp" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdroppLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between">
-                    <h5 style="font-weight: 900" class="modal-title my-font my-color" id="staticBackdropLabel">عربةالتسوق</h5>
+                    <h5 style="font-weight: 900" class="modal-title my-font my-color" id="staticBackdroppLabel">
+                        عربةالتسوق</h5>
                     <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -107,7 +108,7 @@
                                             <div class="row">
 
                                                 <div class="col-lg-12">
-                                                    <h5 class="mb-3"><a href="#!" class="text-body"><i
+                                                    {{-- <h5 class="mb-3"><a href="#!" class="text-body"><i
                                                                 class="fas fa-long-arrow-alt-left me-2"></i>Continue
                                                             shopping</a></h5>
                                                     <hr>
@@ -117,13 +118,14 @@
                                                         <div>
                                                             <p class="mb-1">Shopping cart</p>
                                                             <p class="mb-0">You have 4 items in your cart</p>
-                                                        </div>
-                                                        <div>
+                                                        </div> --}}
+                                                        {{-- <div>
                                                             <p class="mb-0"><span class="text-muted">Sort by:</span>
                                                                 <a href="#!" class="text-body">price <i
-                                                                        class="fas fa-angle-down mt-1"></i></a></p>
-                                                        </div>
-                                                    </div>
+                                                                        class="fas fa-angle-down mt-1"></i></a>
+                                                            </p>
+                                                        </div> --}}
+                                                    {{-- </div> --}}
 
                                                     <div class="card col-md-12 mb-3 p-0">
                                                         <div style="margin: 0%; padding:0%;" class="card-body w-50">
@@ -164,24 +166,16 @@
                     </section>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal"><p style="display: inline" class="my-font">إغلاق</p></button>
-                    <button type="button" class="btn btn-success"><p style="display:inline" class="my-font">الإنتقال للدفع</p></button>
+                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
+                        <p style="display: inline" class="my-font">إغلاق</p>
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <p style="display:inline" class="my-font">الإنتقال للدفع</p>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     @yield('above-main')
 
@@ -198,48 +192,49 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3 class="my-font right">عن متجر الزرقاء الإلكتروني</h3>
+                        <h6 style="line-height: 25px;" class="my-font right">هو إول موقع إلكتروني متخصص لجمع كافة انواع المتاجر من شارع السعادة الكائن في مدينة الزرقاء في مكان واحد سهل وسريع الوصول اليه في أي وقت</h6>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
+
+
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h4 class="my-font right">تواصل معنا</h4>
+                        <p class="my-font right">
+                            الزرقاء البتراوي<br>
+                            الزرقاء الجديدة<br>
+                            عمارة رقم 77<br><br>
+                            +962-5589 55488<strong>: الهاتف</strong><br>
+                            contact@yahoo.com<strong>: البريد الإلكتروني</strong><br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-1 col-md-2 footer-links">
+                        {{-- <h4>Our Services</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul> --}}
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4 class="my-font right">للوصول السريع</h4>
+                        <div class="d-flex justify-content-end">
+                        <ul>
+                            <li><a href="/index"><p style=" display:inline" class="right my-font d-flex justify-content-end">الرئيسية</p></a></li>
+                            <li><a href="/about"><p style=" display:inline" class="right my-font d-flex justify-content-end">من نحن</p></a></li>
+                            <li style="text-align: right"><a href="/contact"><h6 class="right my-font">تواصل معنا</h6></a></li>
                         </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-
-                    </div>
-                    <div class="col-lg-3 col-md-6 footer-info">
-                        <h3>About Moderna</h3>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
-                            valies
-                            darta donna mare fermentum iaculis eu non diam phasellus.</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
