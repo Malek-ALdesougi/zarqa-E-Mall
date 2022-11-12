@@ -53,21 +53,29 @@
                                                 required>
                                             <label class="label mb-4" for="email">إسم المنتج</label>
                                         </div>
-                                        <div class="form-field col-lg-6 ">
-                                            <input id="phone" class="input-file js-input fs-6 right"
-                                                type="file"required>
-                                            <label class="label  mb-4" for="phone">صورة المنتج</label>
 
-                                        </div>
+                                        
+
                                         <div class="form-field col-lg-6 right">
-                                            <input id="name" class="input-text js-input right" type="number" required>
-                                            <label class="label mb-4 right" for="name">الكمية</label>
+                                            <input id="category" class="input-text js-input right" type="text" required>
+                                            <label class="label mb-4 right" for="category">الفئة</label>
+                                        </div>
+
+                                        <div class="form-field col-lg-6 right">
+                                            <input id="quantity" class="input-text js-input right" type="number" required>
+                                            <label class="label mb-4 right" for="quantity">الكمية</label>
                                         </div>
 
                                         <div class="form-field col-lg-12">
                                             <input id="message" class="input-text js-input fs-6 right" type="text-area"
                                                 required>
                                             <label class="label  mb-4" for="message">وصف المنتج</label>
+                                        </div>
+
+                                        <div class="form-field col-lg-12 right ">
+                                            <input id="phone" class="input-file js-input fs-6 right"
+                                                type="file"required>
+                                            <label class="label  mb-4" for="phone">صورة المنتج</label>
                                         </div>
                                         <div class="form-field col-lg-12">
                                             <input class="submit-btn" type="submit" value="إضافة">

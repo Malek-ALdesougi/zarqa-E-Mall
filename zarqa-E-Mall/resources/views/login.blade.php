@@ -111,6 +111,18 @@
                                 <label class="form-label" for="registerEmail">البريد الإلكتروني</label>
                             </div>
 
+                            <!-- address input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="registerAddress" class="form-control right" />
+                                <label class="form-label" for="registerAddress"> العنوان</label>
+                            </div>
+
+                            <!-- phone input -->
+                            <div class="form-outline mb-4">
+                                <input type="number" id="registerNumber" class="form-control right" />
+                                <label class="form-label" for="registerNumber">الهاتف</label>
+                            </div>
+
                             <!-- Password input -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="registerPassword" class="form-control right" />
@@ -194,6 +206,12 @@
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerStoreDescription" class="form-control right" />
                                 <label class="form-label" for="registerStoreDescription">وصف المتجر</label>
+                            </div>
+
+                            <!-- STORE address input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="registerStoreAddress" class="form-control right" />
+                                <label class="form-label" for="registerStoreAddress">العنوان</label>
                             </div>
 
                             <!-- STORE IMAGE input -->

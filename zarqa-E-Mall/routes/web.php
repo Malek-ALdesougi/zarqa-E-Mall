@@ -45,3 +45,23 @@ Route::get('/owner', function(){
 Route::get('login', function(){
     return view('login');
 });
+
+
+
+//----------///////////////////////// DASHBOARD //////////////////////------------//
+Route::get('index-dashboard', function(){
+    return view('admin.index-dashboard');
+});
+
+Route::get('users', function() {
+    return view('admin.users');
+});
+
+Route::get('stores', function() {
+    return view('admin.stores');
+});
+
+Route::get("pendings", function() {
+    return view('admin.pendings');
+});
+

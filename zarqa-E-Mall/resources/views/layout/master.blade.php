@@ -249,7 +249,7 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-                Designed by <a href="https://bootstrapmade.com/">Malek AL-Desougi</a>
+                Designed by <a href="https://github.com/Malek-ALdesougi">Malek AL-Desougi</a>
             </div>
         </div>
     </footer>
