@@ -7,8 +7,9 @@
   scroll-behavior: smooth;
 }
 #search-button{
-background-color: #0d2735;
+background-color: #14435c;
 color:white;
+font-family:'Lemonada', cursive;
 }
 .nav-font{
   font-family: 'Lemonada', cursive;

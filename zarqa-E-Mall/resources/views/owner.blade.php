@@ -67,14 +67,12 @@
                                         </div>
 
                                         <div class="form-field col-lg-12">
-                                            <input id="message" class="input-text js-input fs-6 right" type="text-area"
-                                                required>
+                                            <input id="message" class="input-text js-input fs-6 right" type="text-area" required>
                                             <label class="label  mb-4" for="message">وصف المنتج</label>
                                         </div>
 
                                         <div class="form-field col-lg-12 right ">
-                                            <input id="phone" class="input-file js-input fs-6 right"
-                                                type="file"required>
+                                            <input id="phone" class="input-file js-input fs-6 right" type="file"required>
                                             <label class="label  mb-4" for="phone">صورة المنتج</label>
                                         </div>
                                         <div class="form-field col-lg-12">

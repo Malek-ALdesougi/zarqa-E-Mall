@@ -7,7 +7,7 @@
 
 <div class="container-xxl flex-grow-1 container-p-y">
 <div class="card">
-    <h5 class="card-header">Dark Table head</h5>
+    <h5 class="card-header">All Stores</h5>
     <div class="table-responsive text-nowrap">
       <table class="table">
         <thead style="background-color:#696cff">

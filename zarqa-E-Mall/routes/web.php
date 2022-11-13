@@ -42,13 +42,17 @@ Route::get('/owner', function(){
     return view('owner');
 });
 
+Route::get('checkout', function() {
+    return view('checkout');
+});
+
 Route::get('login', function(){
     return view('login');
 });
 
 
 
-//----------///////////////////////// DASHBOARD //////////////////////------------//
+//--------------///////////////////////// DASHBOARD //////////////////////------------//
 Route::get('index-dashboard', function(){
     return view('admin.index-dashboard');
 });

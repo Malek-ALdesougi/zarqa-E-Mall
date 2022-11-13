@@ -196,11 +196,18 @@
                             </div>
 
                             <!-- STORE category input -->
-                            <div class="form-outline mb-4">
-                                <input type="text" id="registerStoreCategory" class="form-control right"
-                                    placeholder="مثال: ملابس او كهربائيات" />
-                                <label class="form-label" for="registerStoreCategory">فئة المتجر</label>
-                            </div>
+                            <select class="form-select mb-4" aria-label="Default select example">
+                                <option selected>فئة المتجر</option>
+                                <option value="1">ملابس</option>
+                                <option value="2">كهربائيات</option>
+                                <option value="3">أثاث</option>
+                                <option value="4">ألعاب وهدايا</option>
+                                <option value="5">ساعات وعطور</option>
+                                <option value="6">منظفات</option>
+                                <option value="7">مواد تموينية</option>
+                                <option value="8">أجهزة ذكية وحواسيب</option>
+                                <option value="9">أخرى</option>
+                             </select>
 
                             <!-- STORE description input -->
                             <div class="form-outline mb-4">

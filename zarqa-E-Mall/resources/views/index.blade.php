@@ -47,7 +47,7 @@
 
                 <div class="col-lg-4">
                     <input type="text" class="">
-                    <button id="search-button">إبحث</button>
+                    <button style="backgrund-color:#1e4356" id="search-button">إبحث</button>
                 </div>
             </div>
 

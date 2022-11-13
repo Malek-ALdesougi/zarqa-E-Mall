@@ -63,13 +63,12 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
-                            style="font-family: 'Lemonada', cursive;">السلة</a></li>
+                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href="" style="font-family: 'Lemonada', cursive;">السلة</a></li>
                     <i style="color:white; margin-left:3px;" class="fas fa-shopping-cart"></i>
-                    <li><a href="login" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
-                    <li><a href="contact" style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
-                    <li><a href="about" style="font-family: 'Lemonada', cursive;">من نحن</a></li>
-                    <li><a class="active" href="index" style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
+                    <li><a class="{{str_contains(Request::url(), '/login') ? 'active' : '' }}" href="login" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
+                    <li><a class="{{str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="contact" style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
+                    <li><a class="{{str_contains(Request::url(), '/about') ? 'active' : '' }}" href="about" style="font-family: 'Lemonada', cursive;">من نحن</a></li>
+                    <li><a class="{{str_contains(Request::url(), '/index') ? 'active' : '' }}" href="index" style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
                     </li>
                 </ul>
             </nav>
@@ -104,29 +103,10 @@
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body p-4">
-
                                             <div class="row">
-
                                                 <div class="col-lg-12">
-                                                    {{-- <h5 class="mb-3"><a href="#!" class="text-body"><i
-                                                                class="fas fa-long-arrow-alt-left me-2"></i>Continue
-                                                            shopping</a></h5>
-                                                    <hr>
 
-                                                    <div style="padding:0%;"
-                                                        class="d-flex justify-content-between align-items-center mb-4">
-                                                        <div>
-                                                            <p class="mb-1">Shopping cart</p>
-                                                            <p class="mb-0">You have 4 items in your cart</p>
-                                                        </div> --}}
-                                                        {{-- <div>
-                                                            <p class="mb-0"><span class="text-muted">Sort by:</span>
-                                                                <a href="#!" class="text-body">price <i
-                                                                        class="fas fa-angle-down mt-1"></i></a>
-                                                            </p>
-                                                        </div> --}}
-                                                    {{-- </div> --}}
-
+                                                    {{-- This is the cart items section --}}
                                                     <div class="card col-md-12 mb-3 p-0">
                                                         <div style="margin: 0%; padding:0%;" class="card-body w-50">
                                                             <div style="width:200px"
@@ -139,8 +119,8 @@
                                                                             style="width: 55px;">
                                                                     </div>
                                                                     <div class="ms-3">
-                                                                        <h5>Iphone 11 pro</h5>
-                                                                        <p class="small mb-0">256GB, Navy Blue</p>
+                                                                        <p style="width:100px">Iphone 11 pjhjkhhjhrkjkgfgfgfgdfgfgfgjkjkjkkjjho</p>
+                                                                        {{-- <p class="small mb-0">256GB, Navy Blue</p> --}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex flex-row align-items-center">
@@ -156,6 +136,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    {{-- end cart items --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -169,9 +150,9 @@
                     <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
                         <p style="display: inline" class="my-font">إغلاق</p>
                     </button>
-                    <button type="button" class="btn btn-success">
+                    <a href="checkout"><button type="button" class="btn btn-success">
                         <p style="display:inline" class="my-font">الإنتقال للدفع</p>
-                    </button>
+                    </button></a>
                 </div>
             </div>
         </div>
@@ -245,10 +226,6 @@
                 &copy; Copyright <strong><span>Orange</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
                 Designed by <a href="https://github.com/Malek-ALdesougi">Malek AL-Desougi</a>
             </div>
         </div>

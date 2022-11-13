@@ -80,13 +80,12 @@
                 <div class="card-body">
                     <h5 style="font-family: 'Lemonada', cursive; font-weight:bolder" class="card-title right">جلاية سوبر
                     </h5><br>
-                    <p style="text-align:right;"><strong>السعر</strong>&nbsp:77دأ</p>
-                    <p style="text-align:right;"><strong>الكمية المتوفرة</strong>&nbsp:6</p>
+                    <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive">السعر&nbsp:77دأ</strong></p>
+                    <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive">الكمية المتوفرة&nbsp:7</strong></p>
 
                     <!-- Button trigger modal -->
-                    <button style="background-color: #1e4356; color:white" type="button" class="btn"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        التفاصيل
+                    <button style="background-color: #1e4356;" type="button" class="btn my-font" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <span style="background-color: #1e4356; color:white; font-family:'Lemonada', cursive">التفاصيل</span>
                     </button>
                 </div>
             </div>
