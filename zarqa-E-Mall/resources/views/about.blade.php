@@ -19,10 +19,13 @@
                         إذ يمكنكم زيارة موقعنا في أي وقت
                     </p>
                     <ul>
-                        <li style="text-align: right;">البحث عن البضائع والخدمات بطريقة فعالة<i class="bi bi-check2-circle"></i> </li>
-                        <li style="text-align: right;">موقنا مناسب لخدمة جميع الأعمار<i class="bi bi-check2-circle"></i> </li>
-                        <li style="text-align: right;">الشريك الأنسب لأصحاب المحال التجارية أو الخدمية <i class="bi bi-check2-circle"></i> </li>
-                        
+                        <li style="text-align: right;" class="my-font">البحث عن البضائع والخدمات بطريقة فعالة<i
+                                class="bi bi-check2-circle"></i> </li>
+                        <li style="text-align: right;" class="my-font">موقنا مناسب لخدمة جميع الأعمار<i
+                                class="bi bi-check2-circle"></i> </li>
+                        <li style="text-align: right;" class="my-font">الشريك الأنسب لأصحاب المحال التجارية أو الخدمية <i
+                                class="bi bi-check2-circle"></i> </li>
+
                     </ul>
                     <p>
 
@@ -43,25 +46,25 @@
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="2"
                         class="purecounter"></span>
-                    <p>Clients</p>
+                    <span class="my-font fs-6">العملاء</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="555" data-purecounter-duration="1"
                         class="purecounter"></span>
-                    <p>Projects</p>
+                    <span class="my-font fs-6">المتاجر</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="2"
                         class="purecounter"></span>
-                    <p>Hours Of Support</p>
+                    <span class="my-font fs-6">إجمالي المبيعات</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="3"
                         class="purecounter"></span>
-                    <p>Hard Workers</p>
+                    <span class="my-font fs-6 fs-6">أجمالي الطلبات</span>
                 </div>
 
             </div>

@@ -24,18 +24,18 @@
     <!-- ======= Our store Section ======= -->
     <section style="margin-top:80px" class="breadcrumbs">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center">
-                <h2>Our Stores</h2>
+            <div id="stores" class="d-flex justify-content-center align-items-center">
+                <h2 class="my-font">كل المتاجر</h2>
             </div>
         </div>
     </section>
     <!-- End Our store Section -->
 
     <!-- ======= store Section ======= -->
-    <section id="stores" class="store">
+    <section class="store">
         <div class="container">
 
-            <div class="row">
+            <div class="row d-flex ">
                 <div class="col-lg-8">
                     <ul id="store-flters">
                         <li style="font-family: 'Lemonada', cursive;" data-filter="*" class="filter-active">الكل</li>
@@ -45,7 +45,7 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 text-right mb-2">
                     <input type="text" class="">
                     <button style="backgrund-color:#1e4356" id="search-button">إبحث</button>
                 </div>
@@ -59,8 +59,8 @@
                                 src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
                                 class="img-fluid" alt=""><a>
                                 <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                    <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
-                                    <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
+                                    <p class="right my-font"><strong>إسم المتجر</strong>: ملابس الباشا للملبوسات</p>
+                                    <p class="right my-font fs-6"><strong> فئة المتجر </strong>: اكيد ملابس,اوعي, ثياب</p>
                                 </div>
                     </div>
                 </div>
@@ -71,8 +71,8 @@
                                 src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
                                 class="img-fluid" alt=""><a>
                                 <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                    <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
-                                    <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
+                                    <p class="right my-font"><strong>إسم المتجر</strong>: ملابس الباشا للملبوسات</p>
+                                    <p class="right my-font fs-6"><strong> فئة المتجر </strong>: اكيد ملابس,اوعي, ثياب</p>
                                 </div>
                     </div>
                 </div>
@@ -83,12 +83,11 @@
                                 src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
                                 class="img-fluid" alt=""><a>
                                 <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                    <p class="right"><strong>إسم المتجر</strong>:ملابس الباشا للملبوسات</p>
-                                    <p class="right"><strong> الفئة</strong>:اكيد ملابس,اوعي, ثياب</p>
+                                    <p class="right my-font"><strong>إسم المتجر</strong>: ملابس الباشا للملبوسات</p>
+                                    <p class="right my-font fs-6"><strong> فئة المتجر </strong>: اكيد ملابس,اوعي, ثياب</p>
                                 </div>
                     </div>
                 </div>
-
 
 
 

@@ -53,7 +53,7 @@
                     </div>
                     <div class="store-description">
                         <h2 style="text-align: right; font-family: 'Lemonada', cursive;">وصف المتجر</h2>
-                        <p class="right">
+                        <p class="right my-font">
                             متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
                             متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
                             متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
@@ -72,7 +72,7 @@
     {{-- store products section --}}
 
 
-    <div class="row  g-4 col-md-12 d-flex justify-content-evenly">
+    <div style="padding-right:0; padding-left:30px;" class="row  g-4 col-md-12 d-flex justify-content-evenly">
         <div class="col-md-3">
             <div class="card">
                 <img src="https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id1354441996?b=1&k=20&m=1354441996&s=170667a&w=0&h=O4JDagXhIh1N13PNN6G4_L5KB5QPZryin7FOrZnzYvc="

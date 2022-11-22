@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/zoomify-logo.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -63,12 +63,17 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href="" style="font-family: 'Lemonada', cursive;">السلة</a></li>
+                    <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
+                            style="font-family: 'Lemonada', cursive;">السلة</a></li>
                     <i style="color:white; margin-left:3px;" class="fas fa-shopping-cart"></i>
-                    <li><a class="{{str_contains(Request::url(), '/login') ? 'active' : '' }}" href="login" style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
-                    <li><a class="{{str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="contact" style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
-                    <li><a class="{{str_contains(Request::url(), '/about') ? 'active' : '' }}" href="about" style="font-family: 'Lemonada', cursive;">من نحن</a></li>
-                    <li><a class="{{str_contains(Request::url(), '/index') ? 'active' : '' }}" href="index" style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
+                    <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="login"
+                            style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
+                    <li><a class="{{ str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="contact"
+                            style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
+                    <li><a class="{{ str_contains(Request::url(), '/about') ? 'active' : '' }}" href="about"
+                            style="font-family: 'Lemonada', cursive;">من نحن</a></li>
+                    <li><a class="{{ str_contains(Request::url(), '/index') ? 'active' : '' }}" href="index"
+                            style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
                     </li>
                 </ul>
             </nav>
@@ -119,7 +124,8 @@
                                                                             style="width: 55px;">
                                                                     </div>
                                                                     <div class="ms-3">
-                                                                        <p style="width:100px">Iphone 11 pjhjkhhjhrkjkgfgfgfgdfgfgfgjkjkjkkjjho</p>
+                                                                        <p style="width:100px">Iphone 11
+                                                                            pjhjkhhjhrkjkgfgfgfgdfgfgfgjkjkjkkjjho</p>
                                                                         {{-- <p class="small mb-0">256GB, Navy Blue</p> --}}
                                                                     </div>
                                                                 </div>
@@ -151,8 +157,8 @@
                         <p style="display: inline" class="my-font">إغلاق</p>
                     </button>
                     <a href="checkout"><button type="button" class="btn btn-success">
-                        <p style="display:inline" class="my-font">الإنتقال للدفع</p>
-                    </button></a>
+                            <p style="display:inline" class="my-font">الإنتقال للدفع</p>
+                        </button></a>
                 </div>
             </div>
         </div>
@@ -176,7 +182,9 @@
 
                     <div class="col-lg-3 col-md-6 footer-info">
                         <h3 class="my-font right">عن متجر الزرقاء الإلكتروني</h3>
-                        <h6 style="line-height: 25px;" class="my-font right">هو إول موقع إلكتروني متخصص لجمع كافة انواع المتاجر من شارع السعادة الكائن في مدينة الزرقاء في مكان واحد سهل وسريع الوصول اليه في أي وقت</h6>
+                        <h6 style="line-height: 25px;" class="my-font right">هو إول موقع إلكتروني متخصص لجمع كافة
+                            انواع المتاجر من شارع السعادة الكائن في مدينة الزرقاء في مكان واحد سهل وسريع الوصول اليه في
+                            أي وقت</h6>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -211,11 +219,19 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4 class="my-font right">للوصول السريع</h4>
                         <div class="d-flex justify-content-end">
-                        <ul>
-                            <li><a href="/index"><p style=" display:inline" class="right my-font d-flex justify-content-end">الرئيسية</p></a></li>
-                            <li><a href="/about"><p style=" display:inline" class="right my-font d-flex justify-content-end">من نحن</p></a></li>
-                            <li style="text-align: right"><a href="/contact"><h6 class="right my-font">تواصل معنا</h6></a></li>
-                        </ul>
+                            <ul>
+                                <li><a href="/index">
+                                        <p style=" display:inline" class="right my-font d-flex justify-content-end">
+                                            الرئيسية</p>
+                                    </a></li>
+                                <li><a href="/about">
+                                        <p style=" display:inline" class="right my-font d-flex justify-content-end">من
+                                            نحن</p>
+                                    </a></li>
+                                <li style="text-align: right"><a href="/contact">
+                                        <h6 class="right my-font">تواصل معنا</h6>
+                                    </a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

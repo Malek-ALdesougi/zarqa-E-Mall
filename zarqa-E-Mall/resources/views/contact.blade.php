@@ -9,21 +9,21 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="info-box">
-                  <i class="bx bx-map"></i>
+                  <i style="color:#1e4356" class="bx bx-map"></i>
                   <h3 style="font-family: 'Lemonada', cursive;">عنواننا</h3>
-                  <p>الزرقاء-الزرقاء الجديدة-البتراوي-عمارة رقم 77</p>
+                  <p class="my-font">الزرقاء-الزرقاء الجديدة-البتراوي-عمارة رقم 77</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
-                  <i class="bx bx-envelope"></i>
+                  <i style="color:#1e4356" class="bx bx-envelope"></i>
                   <h3 style="font-family: 'Lemonada', cursive;">أرسل بريد إلكتروني</h3>
                   <p>zarqamall@example.com<br>contact@yahoo.com</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
-                  <i class="bx bx-phone-call"></i>
+                  <i style="color:#1e4356" class="bx bx-phone-call"></i>
                   <h3 style="font-family: 'Lemonada', cursive;">إتصل بنا</h3>
                   <p>+962-5589 55488 55<br>+962-6678 254445 41</p>
                 </div>
@@ -52,7 +52,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">لقد تم إرسال رسالتك,شكرا لك</div>
               </div>
-              <div class="text-center"><button type="submit">إرسال</button></div>
+              <div class="text-center"><button style="background-color: #1e4356" class="my-font" type="submit">إرسال</button></div>
             </form>
           </div>
         </div>
@@ -60,7 +60,7 @@
     </section>
     <!-- End Contact Section -->
 
-    <div style="text-align: right; height:200px; font-size:50px" class="container col-md-10 my-font">
+    <div style="text-align: right; height:200px; font-size:50px" class="container col-md-10 my-font mb-5">
       ...شكرا لزيارتكم
     </div>
 
@@ -72,4 +72,5 @@
     </section> --}}
     <!-- End Map Section -->
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
