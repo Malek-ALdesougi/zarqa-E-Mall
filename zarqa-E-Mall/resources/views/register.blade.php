@@ -60,6 +60,12 @@
                                 <label class="form-label" for="registerNumber">الهاتف</label>
                             </div>
 
+                            <!-- USER IMAGE input -->
+                            <div class=" mb-4">
+                                <label for="formFileLg" class="form-label">صورة المستخدم</label>
+                                <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                            </div>
+
                             <!-- Password input -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="registerPassword" class="form-control right" />
