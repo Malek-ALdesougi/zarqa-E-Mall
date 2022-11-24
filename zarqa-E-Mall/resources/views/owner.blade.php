@@ -18,19 +18,21 @@
                                     alt="avatar" class="img-fluid">
                             </div>
                             <div>
-                                <h4 style="color:white; display:inline-block; font-weight:900" class="my-3 my-font"> الدكان
-                                    للاغراضkhhjhj اللذيذة</h4>
+                                <h4 style="color:white; display:inline-block; font-weight:900" class="my-3 my-font"> الدكان للاغراضkhhjhj اللذيذة</h4>
                             </div>
                             {{-- <h6 style="color:white;">الدكان للاغراض اللذيذة</h6><br> --}}
-                            <span style="font-size:15px; margin-right:7px;" class="text-light">مواد تموينية</span>
-                            <p class="mb-2 d-inline-block text-light">: الفئة</p><br>
-                            <span style="font-size:15px; margin-right:7px;" class="text-light"> 98775786567</span>
-                            <p class="mb-2 d-inline-block text-light">: الهاتف</p><br>
-                            <p class="mb-1 d-inline-block text-light">: الموقع</p>
-                            <div style="font-size:15px; margin-right:7px; margin-bottom:50px;" class="text-light">شارع
-                                السعادة-المربع الثاني-عند الرصيف </div>
-                            <button style="border-radius:10px; background-color:rgb(84, 209, 84); margin-bottom:60px;">Edit
-                                Information</button>
+                            <span style="font-size:15px; margin-right:7px;" class="text-light my-font">مواد تموينية</span>
+                            <p class="mb-2 d-inline-block text-light my-font">: الفئة</p><br>
+                            <span style="font-size:15px; margin-right:7px;" class="text-light my-font"> 98775786567</span>
+                            <p class="mb-2 d-inline-block text-light my-font">: الهاتف</p><br>
+                            <p class="mb-1 d-inline-block text-light my-font">: الموقع</p>
+                            <div style="font-size:15px; margin-right:7px; margin-bottom:50px;" class="text-light my-font">
+                                شارع السعادة-المربع الثاني-عند الرصيف </div>
+                            <button class="my-font p-2" style="border-radius:10px; background-color:rgb(74, 177, 74); margin-bottom:60px;">تعديل البيانات</button><br>
+
+                            <a href="#products">
+                                <button class="my-font p-2" style="border-radius:10px; background-color:#83c4e4; margin-bottom:60px;">عرض كافة المنتجات</button>
+                            </a>
                         </div>
                     </div>
                     {{-- <div class="col-mb-6 d-flex justify-content-center align-items-center" style="height:165px;color:#1e4356; font-weight:900; font-size:50px;">أهلا وسهلا</div> --}}
@@ -41,42 +43,53 @@
                         <div class="card-body right">
                             <div class="row p-1">
                                 <section class="get-in-touch mb-5 right">
-                                    <h1 class="title">إضافة منتج جديد</h1>
+                                    <h1 class="title my-font">إضافة منتج جديد</h1>
                                     <form class="contact-form row" style="text-align: right " enctype="multipart/form-data">
                                         <div class="form-field col-lg-6 ">
                                             <input id="company" class="input-text js-input fs-6 right" type="number"
                                                 required>
-                                            <label class="label mb-4" for="company">سعر المنتج</label>
+                                            <label class="label mb-4 my-font" for="company">سعر المنتج</label>
                                         </div>
                                         <div class="form-field col-lg-6 ">
                                             <input id="email" class="input-text js-input fs-6 right" type="text"
                                                 required>
-                                            <label class="label mb-4" for="email">إسم المنتج</label>
+                                            <label class="label mb-4 my-font" for="email">إسم المنتج</label>
                                         </div>
 
-                                        
+
 
                                         <div class="form-field col-lg-6 right">
                                             <input id="category" class="input-text js-input right" type="text" required>
-                                            <label class="label mb-4 right" for="category">الفئة</label>
+                                            <label class="label mb-4 right my-font" for="category">الفئة</label>
                                         </div>
 
                                         <div class="form-field col-lg-6 right">
                                             <input id="quantity" class="input-text js-input right" type="number" required>
-                                            <label class="label mb-4 right" for="quantity">الكمية</label>
+                                            <label class="label mb-4 right my-font" for="quantity">الكمية</label>
                                         </div>
 
                                         <div class="form-field col-lg-12">
-                                            <input id="message" class="input-text js-input fs-6 right" type="text-area" required>
-                                            <label class="label  mb-4" for="message">وصف المنتج</label>
+                                            <input id="message" class="input-text js-input fs-6 right" type="text-area"
+                                                required>
+                                            <label class="label mb-4 my-font" for="message">وصف المنتج</label>
                                         </div>
 
-                                        <div class="form-field col-lg-12 right ">
-                                            <input id="phone" class="input-file js-input fs-6 right" type="file"required>
-                                            <label class="label  mb-4" for="phone">صورة المنتج</label>
+                                        <div class=" mb-4">
+                                            <label style="color:rgb(81, 115, 160)" for="formFileLg"
+                                                class="form-label my-font fs-6">صورة المنتج</label>
+                                            <input class="form-control right form-control-lg" id="formFileLg"
+                                                type="file" />
                                         </div>
+
+
+                                        {{-- <div class="mb-4">
+                                            <label style="color:rgb(81, 115, 160)" for="fileOTHER" class="d-block my-font fs-5 mb-2">صورة المنتج</label>
+                                            <input maxsize="255" size="20" onbeforeeditfocus="return false;"
+                                            type="file" name="file" id="fileOTHER">
+                                        </div> --}}
+
                                         <div class="form-field col-lg-12">
-                                            <input class="submit-btn" type="submit" value="إضافة">
+                                            <input name="file" class="submit-btn my-font" type="submit" value="إضافة">
                                         </div>
                                     </form>
                                 </section>
@@ -89,18 +102,18 @@
         </div>
 
         <div class="container">
-            <div class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder"> كل المنتجات</div>
+            <div id='products' class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder my-font"> كل المنتجات</div>
             <div class="row">
                 <div class="col-lg-12">
                     <table class="table bg-light table-striped col-lg-12" style="text-align: center">
                         <tbody>
                             <thead>
                                 <th></th>
-                                <th>الوصف</th>
-                                <th>صورة المنتج</th>
-                                <th>الكمية</th>
-                                <th>سعر المنتج</th>
-                                <th> إسم المنتج</th>
+                                <th class="my-font">الوصف</th>
+                                <th class="my-font">صورة المنتج</th>
+                                <th class="my-font">الكمية</th>
+                                <th class="my-font">سعر المنتج</th>
+                                <th class="my-font"> إسم المنتج</th>
                             </thead>
 
                             {{-- @foreach ($allBooks as $Book) --}}

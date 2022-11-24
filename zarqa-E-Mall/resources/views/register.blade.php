@@ -11,11 +11,11 @@
                 <!--------------- Pills navs -------------->
                 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active my-font" id="tab-login" data-mdb-toggle="pill" href="#pills-login"
+                        <a class="nav-link active my-font fs-6" id="tab-login" data-mdb-toggle="pill" href="#pills-login"
                             role="tab" aria-controls="pills-login" aria-selected="true">إنشاء حساب كمستخدم</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link my-font" id="tab-register" data-mdb-toggle="pill" href="#pills-register"
+                        <a class="nav-link my-font fs-6" id="tab-register" data-mdb-toggle="pill" href="#pills-register"
                             role="tab" aria-controls="pills-register" aria-selected="false">إنشاء حساب كمالك محل</a>
                     </li>
                 </ul>
@@ -39,43 +39,43 @@
 
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerName" class="form-control right" />
-                                <label class="form-label" for="registerName">الإسم</label>
+                                <label class="form-label" for="registerName"><p class="my-font">الإسم</p></label>
                             </div>
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
                                 <input type="email" id="registerEmail" class="form-control right" />
-                                <label class="form-label" for="registerEmail">البريد الإلكتروني</label>
+                                <label class="form-label" for="registerEmail"><p class="my-font">البريد الإلكتروني</p></label>
                             </div>
 
                             <!-- address input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerAddress" class="form-control right" />
-                                <label class="form-label" for="registerAddress"> العنوان</label>
+                                <label class="form-label" for="registerAddress"> <p class="my-font"> العنوان</p></label>
                             </div>
 
                             <!-- phone input -->
                             <div class="form-outline mb-4">
                                 <input type="number" id="registerNumber" class="form-control right" />
-                                <label class="form-label" for="registerNumber">الهاتف</label>
+                                <label class="form-label" for="registerNumber"><p class="my-font"> الهاتف</p></label>
                             </div>
 
                             <!-- USER IMAGE input -->
                             <div class=" mb-4">
-                                <label for="formFileLg" class="form-label">صورة المستخدم</label>
-                                <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                                <label for="formFileLg" class="form-label"><p class="my-font"> صورة المستخدم</p></label>
+                                <input class="form-control form-control-lg w-100" id="formFileLg" type="file" />
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="registerPassword" class="form-control right" />
-                                <label class="form-label" for="registerPassword">كلمة المرور</label>
+                                <label class="form-label" for="registerPassword"><p class="my-font"> كلمة المرور</p></label>
                             </div>
 
                             <!-- Repeat Password input -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="registerRepeatPassword" class="form-control right" />
-                                <label class="form-label" for="registerRepeatPassword">إعادة كلمة المرور</label>
+                                <label class="form-label" for="registerRepeatPassword"><p class="my-font">إعادة كلمة المرور</p></label>
                             </div>
 
                             <!-- Checkbox -->
@@ -93,7 +93,7 @@
                                 <p class="my-font d-inline">تسجيل</p>
                             </button>
 
-                            <p class="mb-5 pb-lg-2 right" style="color: #393f81;">أمتلك حساب مسبقا<a
+                            <p class="mb-5 pb-lg-2 right my-font" style="color: #393f81;">أمتلك حساب مسبقا<a
                                 href="login" style="color: #e71811; margin-right:7px;"> تسجيل الدخول</a></p>
                         </form>
                     </div>
@@ -119,69 +119,69 @@
                             <!-- Name input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerName" class="form-control right" />
-                                <label class="form-label" for="registerName">الإسم</label>
+                                <label class="form-label" for="registerName"><p class="my-font">الإسم</p></label>
                             </div>
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
                                 <input type="email" id="registerEmail" class="form-control right" />
-                                <label class="form-label" for="registerEmail">البريد الإلكتروني</label>
+                                <label class="form-label" for="registerEmail"><p class="my-font">البريد الإلكتروني</p></label>
                             </div>
 
                             <!-- STORE NAME input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerStoreName" class="form-control right" />
-                                <label class="form-label" for="registerStoreName">إسم المتجر</label>
+                                <label class="form-label" for="registerStoreName"><p class="my-font">إسم المتجر</p></label>
                             </div>
 
                             <!-- STORE Phone input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerPhone" class="form-control right" />
-                                <label class="form-label" for="registerPhone">رقم الهاتف</label>
+                                <label class="form-label" for="registerPhone"><p class="my-font">رقم الهاتف</p></label>
                             </div>
 
                             <!-- STORE category input -->
                             <select class="form-select mb-4" aria-label="Default select example">
-                                <option selected>فئة المتجر</option>
-                                <option value="1">ملابس</option>
-                                <option value="2">كهربائيات</option>
-                                <option value="3">أثاث</option>
-                                <option value="4">ألعاب وهدايا</option>
-                                <option value="5">ساعات وعطور</option>
-                                <option value="6">منظفات</option>
-                                <option value="7">مواد تموينية</option>
-                                <option value="8">أجهزة ذكية وحواسيب</option>
-                                <option value="9">أخرى</option>
+                                <option selected> --فئة المتجر--<option>
+                                <option value="ملابس">ملابس</option>
+                                <option value="كهربائيات">كهربائيات</option>
+                                <option value="أثاث">أثاث</option>
+                                <option value=">ألعاب وهدايا">ألعاب وهدايا</option>
+                                <option value="ساعات وعطور">ساعات وعطور</option>
+                                <option value="منظفات">منظفات</option>
+                                <option value="مواد تموينية">مواد تموينية</option>
+                                <option value="أجهزة ذكية وحواسيب">أجهزة ذكية وحواسيب</option>
+                                <option value="أخرى">أخرى</option>
                              </select>
 
                             <!-- STORE description input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerStoreDescription" class="form-control right" />
-                                <label class="form-label" for="registerStoreDescription">وصف المتجر</label>
+                                <label class="form-label" for="registerStoreDescription"><p class="my-font">وصف المتجر</p></label>
                             </div>
 
                             <!-- STORE address input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="registerStoreAddress" class="form-control right" />
-                                <label class="form-label" for="registerStoreAddress">العنوان</label>
+                                <label class="form-label" for="registerStoreAddress"><p class="my-font">العنوان</p></label>
                             </div>
 
                             <!-- STORE IMAGE input -->
                             <div class=" mb-4">
-                                <label for="formFileLg" class="form-label">صورة المتجر</label>
+                                <label for="formFileLg" class="form-label"><p class="my-font">صورة المتجر</p></label>
                                 <input class="form-control form-control-lg" id="formFileLg" type="file" />
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="registerPassword" class="form-control right" />
-                                <label class="form-label" for="registerPassword">كلمة المرور</label>
+                                <label class="form-label" for="registerPassword"><p class="my-font">كلمة المرور</p></label>
                             </div>
 
                             <!-- Repeat Password input -->
                             <div class="form-outline mb-4">
                                 <input type="password" id="registerRepeatPassword" class="form-control right" />
-                                <label class="form-label" for="registerRepeatPassword">إعادة كلمة المرور</label>
+                                <label class="form-label" for="registerRepeatPassword"><p class="my-font">إعادة كلمة المرور</p></label>
                             </div>
 
                             <!-- Checkbox -->
@@ -199,7 +199,7 @@
                                 <p class="my-font d-inline">تسجيل</p>
                             </button>
 
-                            <p class="mb-5 pb-lg-2 right" style="color: #393f81;">أمتلك حساب مسبقا<a
+                            <p class="mb-5 pb-lg-2 right my-font fs-6" style="color: #393f81;">أمتلك حساب مسبقا<a
                                 href="login" style="color: #e71811; margin-right:7px;"> تسجيل الدخول</a></p>
                         </form>
                     </div>

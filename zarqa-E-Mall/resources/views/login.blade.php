@@ -43,13 +43,13 @@
 
                                         <div class="pt-1 mb-4">
                                             <button style="background-color: #1e4356"
-                                                class="btn text-light btn-lg btn-block" type="button">تسجيل الدخول</button>
+                                                class="btn text-light btn-lg btn-block" type="button"><p class="my-font d-inline">تسجيل الدخول</p></button>
                                         </div>
 
                                         <a class="small text-muted right" href="#!">
-                                            <p>هل نسيت كلمة المرور؟</p>
+                                            <p class="my-font fs-6">هل نسيت كلمة المرور؟</p>
                                         </a>
-                                        <p class="mb-5 pb-lg-2 right" style="color: #393f81;">لا أمتلك حساب<a
+                                        <p class="mb-5 pb-lg-2 right my-font" style="color: #393f81;">لا أمتلك حساب ,<a
                                                 href="register" style="color: #e71811; margin-right:7px;">سجل الآن</a></p>
                                     </form>
 

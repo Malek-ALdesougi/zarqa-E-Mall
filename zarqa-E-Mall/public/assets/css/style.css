@@ -86,6 +86,30 @@ h6,
   opacity: 1;
 }
 
+/* input add product style */
+/* 
+input[type="file"] {
+  margin-left: 10px;
+  border: 1px solid #b5bcc7;
+  width: 360px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+  direction: rtl;
+  border-radius: 3px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: #435c8a;
+  color: #FFFFFF;
+  line-height: 38px;
+  padding: 0px 20px;
+  border: none;
+  float: right;
+  cursor: pointer;
+} */
+
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
