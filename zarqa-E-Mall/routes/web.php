@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,58 +19,76 @@ Route::get('/', function () {
 });
 
 // Basic routes 
-Route::get('/index', function(){
+Route::get('/index', function () {
     return view('/index');
 });
 
-Route::get('/about', function(){
+Route::get('/about', function () {
     return view('/about');
 });
 
-Route::get('/contact', function(){
+Route::get('/contact', function () {
     return view('/contact');
 });
 
-Route::get('/store', function(){
-    return view('/store');
+// MAIN ROUTES FOR LOGIN AND REGISTER
+Route::get('/register', function() {
+    return view('register');
 });
 
-Route::get('profile', function(){
-    return view('profile');
-});
+Route::post('/register-user', [UserController::class, 'store']);
+Route::post('/register-owner', [UserController::class, 'ownerRegister']);
 
-Route::get('/owner', function(){
-    return view('owner');
-});
-
-Route::get('checkout', function() {
-    return view('checkout');
-});
-
-Route::get('login', function(){
+Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('register', function(){
-    return view('register');
+Route::get('/logout', [UserController::class, 'logout']);
+
+
+
+
+
+
+
+
+
+Route::get('/store', function () {
+    return view('/store');
 });
+
+Route::get('profile', function () {
+    return view('profile');
+});
+
+Route::get('/owner', function () {
+    return view('owner');
+});
+
+Route::get('checkout', function () {
+    return view('checkout');
+});
+
+
+// Route::get('register', function () {
+//     return view('register');
+// });
 
 
 
 //--------------///////////////////////// DASHBOARD //////////////////////------------//
-Route::get('index-dashboard', function(){
+Route::get('index-dashboard', function () {
     return view('admin.index-dashboard');
 });
 
-Route::get('users', function() {
+Route::get('users', function () {
     return view('admin.users');
 });
 
-Route::get('stores', function() {
+Route::get('stores', function () {
     return view('admin.stores');
 });
 
-Route::get("pendings", function() {
+Route::get("pendings", function () {
     return view('admin.pendings');
 });
-

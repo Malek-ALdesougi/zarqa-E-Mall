@@ -23,7 +23,8 @@
                 {{-- ----------------------------------- USER REGISTERATION FORM ------------------------------------ --}}
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                        <form>
+                        <form action="/register-user" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <p class="my-color text-center my-font fs-7">: تسجيل الدخول من خلال</p>
                             <div class="d-flex justify-content-evenly  mb-3">
                                 <button type="button" class="btn btn-link btn-floating mx-1">
@@ -37,44 +38,66 @@
 
                             <p class="text-center my-font my-color">أو </p>
 
+                            <!-- name input -->
+                            @error('name')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerName" class="form-control right" />
+                                <input name="name" type="text" id="registerName" class="form-control right" />
                                 <label class="form-label" for="registerName"><p class="my-font">الإسم</p></label>
                             </div>
 
                             <!-- Email input -->
+                            @error('email')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="email" id="registerEmail" class="form-control right" />
+                                <input name="email" type="email" id="registerEmail" class="form-control right" />
                                 <label class="form-label" for="registerEmail"><p class="my-font">البريد الإلكتروني</p></label>
                             </div>
 
                             <!-- address input -->
+                            @error('address')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerAddress" class="form-control right" />
+                                <input name="address" type="text" id="registerAddress" class="form-control right" />
                                 <label class="form-label" for="registerAddress"> <p class="my-font"> العنوان</p></label>
                             </div>
 
                             <!-- phone input -->
+                            @error('phone')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="number" id="registerNumber" class="form-control right" />
+                                <input name="phone" type="number" id="registerNumber" class="form-control right" />
                                 <label class="form-label" for="registerNumber"><p class="my-font"> الهاتف</p></label>
                             </div>
 
                             <!-- USER IMAGE input -->
+                            @error('image')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class=" mb-4">
                                 <label for="formFileLg" class="form-label"><p class="my-font"> صورة المستخدم</p></label>
-                                <input class="form-control form-control-lg w-100" id="formFileLg" type="file" />
+                                <input name="image" class="form-control form-control-lg w-100" id="formFileLg" type="file" />
                             </div>
 
                             <!-- Password input -->
+                            @error('password')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="password" id="registerPassword" class="form-control right" />
+                                <input name="password" type="password" id="registerPassword" class="form-control right" />
                                 <label class="form-label" for="registerPassword"><p class="my-font"> كلمة المرور</p></label>
                             </div>
 
                             <!-- Repeat Password input -->
+                            @error('password_confirmation')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="password" id="registerRepeatPassword" class="form-control right" />
+                                <input name="password_confirmation" type="password" id="registerRepeatPassword" class="form-control right" />
                                 <label class="form-label" for="registerRepeatPassword"><p class="my-font">إعادة كلمة المرور</p></label>
                             </div>
 
@@ -102,7 +125,8 @@
                     {{-- ------------------------------------ STORE OWNER REGISTERATION FORM ------------------------------------- --}}
 
                     <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                        <form>
+                        <form action="/register-owner" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <p class="my-color text-center my-font fs-7">: تسجيل الدخول من خلال</p>
                             <div class="d-flex justify-content-evenly  mb-3">
                                 <button type="button" class="btn btn-link btn-floating mx-1">
@@ -117,31 +141,46 @@
 
 
                             <!-- Name input -->
+                            @error('owner_name')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerName" class="form-control right" />
+                                <input name="owner_name" type="text" id="registerName" class="form-control right" />
                                 <label class="form-label" for="registerName"><p class="my-font">الإسم</p></label>
                             </div>
 
                             <!-- Email input -->
+                            @error('owner_email')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="email" id="registerEmail" class="form-control right" />
+                                <input name="owner_email" type="email" id="registerEmail" class="form-control right" />
                                 <label class="form-label" for="registerEmail"><p class="my-font">البريد الإلكتروني</p></label>
                             </div>
 
                             <!-- STORE NAME input -->
+                            @error('store_name')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerStoreName" class="form-control right" />
+                                <input name="store_name" type="text" id="registerStoreName" class="form-control right" />
                                 <label class="form-label" for="registerStoreName"><p class="my-font">إسم المتجر</p></label>
                             </div>
 
                             <!-- STORE Phone input -->
+                            @error('owner_phone')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerPhone" class="form-control right" />
+                                <input name="owner_phone" type="text" id="registerPhone" class="form-control right" />
                                 <label class="form-label" for="registerPhone"><p class="my-font">رقم الهاتف</p></label>
                             </div>
 
                             <!-- STORE category input -->
-                            <select class="form-select mb-4" aria-label="Default select example">
+                            @error('category')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                            <select name="category" class="form-select mb-4" aria-label="Default select example">
                                 <option selected> --فئة المتجر--<option>
                                 <option value="ملابس">ملابس</option>
                                 <option value="كهربائيات">كهربائيات</option>
@@ -155,32 +194,47 @@
                              </select>
 
                             <!-- STORE description input -->
+                            @error('description')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerStoreDescription" class="form-control right" />
+                                <input name="description" type="text" id="registerStoreDescription" class="form-control right" />
                                 <label class="form-label" for="registerStoreDescription"><p class="my-font">وصف المتجر</p></label>
                             </div>
 
                             <!-- STORE address input -->
+                            @error('store_address')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerStoreAddress" class="form-control right" />
+                                <input name="store_address" type="text" id="registerStoreAddress" class="form-control right" />
                                 <label class="form-label" for="registerStoreAddress"><p class="my-font">العنوان</p></label>
                             </div>
 
                             <!-- STORE IMAGE input -->
+                            @error('store_image')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class=" mb-4">
                                 <label for="formFileLg" class="form-label"><p class="my-font">صورة المتجر</p></label>
-                                <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                                <input name="store_image" class="form-control form-control-lg" id="formFileLg" type="file" />
                             </div>
 
                             <!-- Password input -->
+                            @error('owner_password')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="password" id="registerPassword" class="form-control right" />
+                                <input name="owner_password" type="password" id="registerPassword" class="form-control right" />
                                 <label class="form-label" for="registerPassword"><p class="my-font">كلمة المرور</p></label>
                             </div>
 
                             <!-- Repeat Password input -->
+                            @error('owner_password_confirmation')
+                              <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <div class="form-outline mb-4">
-                                <input type="password" id="registerRepeatPassword" class="form-control right" />
+                                <input name="owner_password_confirmation" type="password" id="registerRepeatPassword" class="form-control right" />
                                 <label class="form-label" for="registerRepeatPassword"><p class="my-font">إعادة كلمة المرور</p></label>
                             </div>
 

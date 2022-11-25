@@ -66,19 +66,36 @@
                     <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
                             style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i><span id="cartNumber" class="text-light">7</span></a></li>
                     
-
+                    @auth
                     <li>
-                        <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
+                        {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
+                            <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
+                        </a> --}}
+
+                        <li class="dropdown"><a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
                             <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
                         </a>
+                            <ul>
+                              <li class="d-flex justify-content-end"><a href="logout"><span class="my-font right">تسجيل الخروج</span></a></li>
+                              {{-- <li><a href="#">Deep Drop Down 2</a></li>
+                              <li><a href="#">Deep Drop Down 3</a></li> --}}
+                            </ul>
+                          </li>
                     </li>
+                    @endauth
 
+                    @guest
                     <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="login"
                             style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
+                    @endguest
+
+
                     <li><a class="{{ str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="contact"
                             style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
+
                     <li><a class="{{ str_contains(Request::url(), '/about') ? 'active' : '' }}" href="about"
                             style="font-family: 'Lemonada', cursive;">من نحن</a></li>
+
                     <li><a class="{{ str_contains(Request::url(), '/index') ? 'active' : '' }}" href="index"
                             style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
                     </li>
