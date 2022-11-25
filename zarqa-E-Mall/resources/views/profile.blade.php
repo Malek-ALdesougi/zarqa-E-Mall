@@ -26,46 +26,46 @@
                         <div class="card-body">
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6 text-end">
-                                    <p class="text-muted mb-0">الزبون الأول</p>
+                                    <p class="text-muted mb-0 my-font">الزبون الأول</p>
                                 </div>
                                 <div class="col-sm-3 text-end">
-                                    <p class="mb-0">الإسم</p>
+                                    <p class="mb-0 my-font">الإسم</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6 text-end">
-                                    <p class="text-muted mb-0">malek@yahoo.com</p>
+                                    <p class="text-muted mb-0 my-font">malek@yahoo.com</p>
                                 </div>
                                 <div class="col-sm-3 text-end">
-                                    <p class="mb-0">البريد الإلكتروني</p>
+                                    <p class="mb-0 my-font">البريد الإلكتروني</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6 text-end">
-                                    <p class="text-muted mb-0">078-9876554</p>
+                                    <p class="text-muted mb-0 my-font">078-9876554</p>
                                 </div>
                                 <div class="col-sm-3 text-end">
-                                    <p class="mb-0">الهاتف</p>
+                                    <p class="mb-0 my-font">الهاتف</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6 text-end">
-                                    <p class="text-muted mb-0">078-9876554</p>
+                                    <p class="text-muted mb-0 my-font">078-9876554</p>
                                 </div>
                                 <div class="col-sm-3 text-end">
-                                    <p class="mb-0">2 الهاتف</p>
+                                    <p class="mb-0 my-font">2 الهاتف</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6 text-end">
-                                    <p class="text-muted mb-0">الزرقاء-الزرقاء الجديدة-البتراوي-شارع 12</p>
+                                    <p class="text-muted mb-0 my-font">الزرقاء-الزرقاء الجديدة-البتراوي-شارع 12</p>
                                 </div>
                                 <div class="col-sm-3 text-end">
-                                    <p class="mb-0">العنوان</p>
+                                    <p class="mb-0 my-font">العنوان</p>
                                 </div>
                             </div>
                         </div>
@@ -76,19 +76,19 @@
 
 
         <div class="container">
-            <div class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder">سجل المشتريات</div>
+            <div class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder my-font">سجل المشتريات</div>
             <div class="row">
                 <div class="col-md-12">
                     <table class="table bg-light table-striped" style="text-align: center">
                         <tbody>
                             <thead>
-                                <th>حذف</th>
+                                <th class="my-font">حذف</th>
                                 <th></th>
-                                <th>تاريخ الشراء</th>
-                                <th>السعر</th>
-                                <th>المنتج</th>
-                                <th>إسم المنتج</th>
-                                <th>رقم الطلب</th>
+                                <th class="my-font">تاريخ الشراء</th>
+                                <th class="my-font">السعر</th>
+                                <th class="my-font">المنتج</th>
+                                <th class="my-font">إسم المنتج</th>
+                                <th class="my-font">رقم الطلب</th>
                             </thead>
 
                             {{-- @foreach ($allBooks as $Book) --}}

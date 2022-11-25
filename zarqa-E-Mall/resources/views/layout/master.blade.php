@@ -64,8 +64,15 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
                     <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
-                            style="font-family: 'Lemonada', cursive;">السلة</a></li>
-                    <i style="color:white; margin-left:3px;" class="fas fa-shopping-cart"></i>
+                            style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i><span id="cartNumber" class="text-light">7</span></a></li>
+                    
+
+                    <li>
+                        <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
+                            <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
+                        </a>
+                    </li>
+
                     <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="login"
                             style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
                     <li><a class="{{ str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="contact"

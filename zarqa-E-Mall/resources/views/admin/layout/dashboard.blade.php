@@ -29,9 +29,10 @@
     <title>Zarqa E-Mall</title>
 
     <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="public-admin/assets/img/favicon/favicon.ico" />
+    
+    <!-- Favicons -->
+    <link href="assets/img/zoomify-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
