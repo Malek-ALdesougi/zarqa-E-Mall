@@ -47,7 +47,7 @@ class UserController extends Controller
             'phone' => 'required|numeric|digits:10|starts_with:07',
             'image' => 'required',
             'password' => 'required|min:8|confirmed'
-        ],[
+        ], [
             'name.required' => 'حقل الإسم مطلوب',
             'email.required' => 'حقل البريد الإلكتروني مطلوب',
             'email.unique' => 'هذا الحساب مستخدم',
@@ -76,20 +76,21 @@ class UserController extends Controller
         return redirect('/index');
     }
 
-    public function ownerRegister(Request $request){
+    public function ownerRegister(Request $request)
+    {
 
         $request->validate([
-            'owner_name' => 'required',//
-            'email' => 'required|unique:users',//
+            'owner_name' => 'required', //
+            'email' => 'required|unique:users', //
             'store_name' => 'required',
-            'owner_phone' => 'required|numeric|digits:10|starts_with:07',//
+            'owner_phone' => 'required|numeric|digits:10|starts_with:07', //
             'category' => 'required',
             'description' => 'required',
-            'store_address' => 'required|max:50',//
-            'store_image' => 'required',//
-            'owner_password' => 'required|min:8|confirmed'//
+            'store_address' => 'required|max:50', //
+            'store_image' => 'required', //
+            'owner_password' => 'required|min:8|confirmed' //
 
-        ],[
+        ], [
             'owner_name.required' => 'حقل الإسم مطلوب',
             'email.required' => 'حقل البريد الإلكتروني مطلوب',
             'email.unique' => 'هذا الحساب مستخدم',
@@ -117,7 +118,7 @@ class UserController extends Controller
         $newOwner->password = Hash::make($request->owner_password);
 
         $newOwner->save();
-       //------------------
+        //------------------
         $newStore = new Store;
         $newStore->user_id = $newOwner->id;
         $newStore->store_name = $request->store_name;
@@ -129,6 +130,38 @@ class UserController extends Controller
 
         return redirect('/owner');
     }
+
+
+
+    public function login(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ], [
+            'email.required' => 'حقل البريد الإلكتروني مطلوب',
+            'password.required' => 'حقل كلمة المرور مطلوب'
+        ]);
+        // dd($request->password);
+        $credentials = $request->only('email', 'password');
+
+        if (auth::attempt($credentials)) {
+
+            if (Auth::user()->roll == 'user') {
+                $request->session()->regenerate();
+                return redirect('/index');
+            } elseif (Auth::user()->roll == 'owner') {
+                $request->session()->regenerate();
+                return redirect('/owner');
+            }
+        } else {
+            // dd($request->email);
+            return back()->with('error', 'البريد الإلكتروني أو كلمة المرور أو كلاهما غير صحيح');
+        }
+    }
+
+
 
     /**
      * Display the specified resource.
@@ -175,12 +208,12 @@ class UserController extends Controller
         //
     }
 
-    public function logout(){
+    public function logout()
+    {
 
         Auth::logout();
         Session::flush();
 
         return redirect('index');
-        
     }
 }

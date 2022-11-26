@@ -9,7 +9,7 @@
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-md-10">
-                    <div class="card" style="border-radius: 1rem; height:500px;">
+                    <div class="card" style="border-radius: 1rem; height:530px;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
                                 <img style="border-radius:10px; margin-top:50px" src="assets/img/Forgotpassword-rafiki.png"
@@ -18,7 +18,9 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form>
+                                    <form action="/login-user" method="POST" enctype="multipart/form-data">
+                                        @method('GET')
+                                        @csrf
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3 mb-3" style="color: #1e4356;"></i>
                                             <span class="h1 fw-bold mb-0 ">
@@ -26,24 +28,33 @@
                                             </span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3 my-font right" style="letter-spacing: 1px;">تسجيل
-                                            الدخول إلى حسابك</h5>
+                                        <h5 class="fw-normal mb-3 pb-3 my-font right" style="letter-spacing: 1px;">تسجيل الدخول إلى حسابك</h5>
 
+                                        @if (session('error'))
+                                           <p style="font-size:medium" class="text-danger mb-0 right">{{ session('error') }}</p>
+                                        @endif
+
+                                        @error('email')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="form2Example17"
+                                            <input name="email" type="email" id="form2Example17"
                                                 class="form-control form-control-lg right" />
                                             <label class="form-label" for="form2Example17">البريد الإلكتروني</label>
                                         </div>
 
+                                        @error('password')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="form2Example27"
+                                            <input name="password" type="password" id="form2Example27"
                                                 class="form-control form-control-lg" />
                                             <label class="form-label right" for="form2Example27">كلمة المرور</label>
                                         </div>
 
                                         <div class="pt-1 mb-4">
                                             <button style="background-color: #1e4356"
-                                                class="btn text-light btn-lg btn-block" type="button"><p class="my-font d-inline">تسجيل الدخول</p></button>
+                                                class="btn text-light btn-lg btn-block" type="submit"><p class="my-font d-inline">تسجيل الدخول</p></button>
                                         </div>
 
                                         <a class="small text-muted right" href="#!">

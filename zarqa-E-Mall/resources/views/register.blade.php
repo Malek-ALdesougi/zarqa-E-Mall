@@ -49,9 +49,7 @@
 
                             <!-- Email input -->
                             @error('email')
-                                {{-- <div class="d-flex justify-content-end"> --}}
                                   <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
-                                {{-- </div> --}} 
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="email" type="email" id="registerEmail" class="form-control right" />

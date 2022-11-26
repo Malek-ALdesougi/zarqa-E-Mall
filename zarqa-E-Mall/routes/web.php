@@ -32,16 +32,19 @@ Route::get('/contact', function () {
 });
 
 // MAIN ROUTES FOR LOGIN AND REGISTER
+
+//route to show the register page
 Route::get('/register', function() {
     return view('register');
 });
-
 Route::post('/register-user', [UserController::class, 'store']);
 Route::post('/register-owner', [UserController::class, 'ownerRegister']);
 
+//route to show the login page
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/login-user', [UserController::class, 'login']);
 
 Route::get('/logout', [UserController::class, 'logout']);
 
