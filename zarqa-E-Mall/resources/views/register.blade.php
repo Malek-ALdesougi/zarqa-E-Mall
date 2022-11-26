@@ -40,7 +40,7 @@
 
                             <!-- name input -->
                             @error('name')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="name" type="text" id="registerName" class="form-control right" />
@@ -49,7 +49,9 @@
 
                             <!-- Email input -->
                             @error('email')
-                              <small class="text-danger">{{ $message }}</small>
+                                {{-- <div class="d-flex justify-content-end"> --}}
+                                  <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                {{-- </div> --}} 
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="email" type="email" id="registerEmail" class="form-control right" />
@@ -58,7 +60,7 @@
 
                             <!-- address input -->
                             @error('address')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="address" type="text" id="registerAddress" class="form-control right" />
@@ -67,7 +69,7 @@
 
                             <!-- phone input -->
                             @error('phone')
-                            <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="phone" type="number" id="registerNumber" class="form-control right" />
@@ -76,7 +78,7 @@
 
                             <!-- USER IMAGE input -->
                             @error('image')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class=" mb-4">
                                 <label for="formFileLg" class="form-label"><p class="my-font"> صورة المستخدم</p></label>
@@ -85,7 +87,7 @@
 
                             <!-- Password input -->
                             @error('password')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="password" type="password" id="registerPassword" class="form-control right" />
@@ -94,7 +96,7 @@
 
                             <!-- Repeat Password input -->
                             @error('password_confirmation')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="password_confirmation" type="password" id="registerRepeatPassword" class="form-control right" />
@@ -142,7 +144,7 @@
 
                             <!-- Name input -->
                             @error('owner_name')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="owner_name" type="text" id="registerName" class="form-control right" />
@@ -150,17 +152,17 @@
                             </div>
 
                             <!-- Email input -->
-                            @error('owner_email')
-                              <small class="text-danger">{{ $message }}</small>
+                            @error('email')
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
-                                <input name="owner_email" type="email" id="registerEmail" class="form-control right" />
+                                <input name="email" type="email" id="registerEmail" class="form-control right" />
                                 <label class="form-label" for="registerEmail"><p class="my-font">البريد الإلكتروني</p></label>
                             </div>
 
                             <!-- STORE NAME input -->
                             @error('store_name')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="store_name" type="text" id="registerStoreName" class="form-control right" />
@@ -169,7 +171,7 @@
 
                             <!-- STORE Phone input -->
                             @error('owner_phone')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="owner_phone" type="text" id="registerPhone" class="form-control right" />
@@ -178,10 +180,10 @@
 
                             <!-- STORE category input -->
                             @error('category')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <select name="category" class="form-select mb-4" aria-label="Default select example">
-                                <option selected> --فئة المتجر--<option>
+                                <option value=''>--فئة المتجر--<option>
                                 <option value="ملابس">ملابس</option>
                                 <option value="كهربائيات">كهربائيات</option>
                                 <option value="أثاث">أثاث</option>
@@ -195,7 +197,7 @@
 
                             <!-- STORE description input -->
                             @error('description')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="description" type="text" id="registerStoreDescription" class="form-control right" />
@@ -204,7 +206,7 @@
 
                             <!-- STORE address input -->
                             @error('store_address')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="store_address" type="text" id="registerStoreAddress" class="form-control right" />
@@ -213,7 +215,7 @@
 
                             <!-- STORE IMAGE input -->
                             @error('store_image')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class=" mb-4">
                                 <label for="formFileLg" class="form-label"><p class="my-font">صورة المتجر</p></label>
@@ -222,7 +224,7 @@
 
                             <!-- Password input -->
                             @error('owner_password')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="owner_password" type="password" id="registerPassword" class="form-control right" />
@@ -231,7 +233,7 @@
 
                             <!-- Repeat Password input -->
                             @error('owner_password_confirmation')
-                              <small class="text-danger">{{ $message }}</small>
+                            <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                             @enderror
                             <div class="form-outline mb-4">
                                 <input name="owner_password_confirmation" type="password" id="registerRepeatPassword" class="form-control right" />
