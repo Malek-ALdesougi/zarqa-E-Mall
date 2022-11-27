@@ -27,6 +27,22 @@ class User extends Authenticatable
         'roll'
     ];
 
+    public function stores(){
+        return $this->hasOne(Store::class);
+    }
+
+    public function carts(){
+        return $this->hasOne(Cart::class);
+    }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
+
+    public function message(){
+        return $this->hasMany(UserMessage::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

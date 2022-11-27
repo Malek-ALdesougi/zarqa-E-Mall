@@ -46,6 +46,7 @@ Route::get('/login', function () {
 });
 Route::get('/login-user', [UserController::class, 'login']);
 
+// Logout route
 Route::get('/logout', [UserController::class, 'logout']);
 
 

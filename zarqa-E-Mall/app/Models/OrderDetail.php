@@ -14,4 +14,13 @@ class OrderDetail extends Model
         'product_id',
         'cart_id'
     ];
+
+
+    public function products(){
+        return $this->hasMany(product::class);
+    }
+
+    public function carts(){
+        return $this->belongsTo(Cart::class);
+    }
 }

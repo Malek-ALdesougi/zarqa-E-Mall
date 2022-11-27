@@ -13,4 +13,13 @@ class Order extends Model
         'user_id',
         'total'
     ];
+
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }

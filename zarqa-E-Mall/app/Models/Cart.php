@@ -14,4 +14,14 @@ class Cart extends Model
         'product_id',
         'quantity'
     ];
+
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
+
+// ?? not sure from this realtion
+    public function orderDetails(){
+        return $this->hasMany(OrderDetail::class);
+    }
 }

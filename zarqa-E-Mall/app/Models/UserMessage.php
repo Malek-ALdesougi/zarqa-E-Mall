@@ -14,4 +14,8 @@ class UserMessage extends Model
         'subject',
         'message'
     ];
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }
