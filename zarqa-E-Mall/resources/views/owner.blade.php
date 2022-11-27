@@ -11,27 +11,34 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card mb-5">
+                        {{-- {{Auth::user()->stores->name}} --}}
                         <div style="background-color:#1e4356;" class="card-body text-center">
-                            <div>
-                                <img width="300px" height="500px"
-                                    src="https://media.istockphoto.com/id/1157106624/photo/all-your-necessities-stored-in-one-place.jpg?s=612x612&w=0&k=20&c=fANV-CP9N_Dt5lVoKWiZdAch60-2IOeHEm_pnvgk348="
-                                    alt="avatar" class="img-fluid">
+                            <div class="d-flex justify-content-center">
+                                <img style="display: block; max-width:400px; max-height:200px; width:auto; height:auto"
+                                    src="images/{{ $owner->image }}" alt="avhellllatar" class="img-fluid">
                             </div>
                             <div>
-                                <h4 style="color:white; display:inline-block; font-weight:900" class="my-3 my-font"> الدكان للاغراضkhhjhj اللذيذة</h4>
+                                <h4 style="color:white; display:inline-block; font-weight:900" class="my-3 my-font">
+                                    {{ $store->store_name }}</h4>
                             </div>
                             {{-- <h6 style="color:white;">الدكان للاغراض اللذيذة</h6><br> --}}
-                            <span style="font-size:15px; margin-right:7px;" class="text-light my-font">مواد تموينية</span>
+                            <span style="font-size:15px; margin-right:7px;"
+                                class="text-light my-font">{{ $store->category }}</span>
                             <p class="mb-2 d-inline-block text-light my-font">: الفئة</p><br>
-                            <span style="font-size:15px; margin-right:7px;" class="text-light my-font"> 98775786567</span>
+                            <span style="font-size:15px; margin-right:7px;" class="text-light my-font">
+                                {{ $owner->phone }}</span>
                             <p class="mb-2 d-inline-block text-light my-font">: الهاتف</p><br>
                             <p class="mb-1 d-inline-block text-light my-font">: الموقع</p>
                             <div style="font-size:15px; margin-right:7px; margin-bottom:50px;" class="text-light my-font">
-                                شارع السعادة-المربع الثاني-عند الرصيف </div>
-                            <button class="my-font p-2" style="border-radius:10px; background-color:rgb(74, 177, 74); margin-bottom:60px;">تعديل البيانات</button><br>
+                                {{ $owner->address }}</div>
+                            <button class="my-font p-2"
+                                style="border-radius:10px; background-color:rgb(74, 177, 74); margin-bottom:60px;">تعديل
+                                البيانات</button><br>
 
                             <a href="#products">
-                                <button class="my-font p-2" style="border-radius:10px; background-color:#83c4e4; margin-bottom:60px;">عرض كافة المنتجات</button>
+                                <button class="my-font p-2"
+                                    style="border-radius:10px; background-color:#83c4e4; margin-bottom:60px;">عرض كافة
+                                    المنتجات</button>
                             </a>
                         </div>
                     </div>
@@ -102,7 +109,8 @@
         </div>
 
         <div class="container">
-            <div id='products' class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder my-font"> كل المنتجات</div>
+            <div id='products' class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder my-font"> كل المنتجات
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <table class="table bg-light table-striped col-lg-12" style="text-align: center">

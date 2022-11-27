@@ -18,7 +18,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -114,7 +113,14 @@ class UserController extends Controller
         $newOwner->email = $request->email;
         $newOwner->address = $request->store_address;
         $newOwner->phone = $request->owner_phone;
-        $newOwner->image = base64_decode(file_get_contents($request->file('store_image')));
+        // $newOwner->image = base64_decode(file_get_contents($request->file('store_image')));
+        if($request->hasFile('store_image')){
+            $file = $request->file('store_image');
+            $extention = $file->getClientOriginalExtension();
+            $fileName = time().'.' . $extention;
+            $file->move('images/',$fileName);
+            $newOwner->image = $fileName;
+        }
         $newOwner->password = Hash::make($request->owner_password);
 
         $newOwner->save();
@@ -128,7 +134,9 @@ class UserController extends Controller
         Auth::login($newOwner);
         $newStore->save();
 
-        return redirect('/owner');
+        // dd($newOwner->image);
+
+        return view('/owner', ['store' => $newOwner->stores, 'owner' => $newOwner]);
     }
 
 
@@ -152,8 +160,10 @@ class UserController extends Controller
                 $request->session()->regenerate();
                 return redirect('/index');
             } elseif (Auth::user()->roll == 'owner') {
+                $stores = Auth::user()->stores;
+                $owner = Auth::user();
                 $request->session()->regenerate();
-                return redirect('/owner');
+                return view('/owner', ['store'=> $stores, 'owner' => $owner]);
             }
         } else {
             // dd($request->email);
