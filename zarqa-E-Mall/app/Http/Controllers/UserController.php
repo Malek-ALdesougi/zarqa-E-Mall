@@ -160,10 +160,10 @@ class UserController extends Controller
                 $request->session()->regenerate();
                 return redirect('/index');
             } elseif (Auth::user()->roll == 'owner') {
-                $stores = Auth::user()->stores;
-                $owner = Auth::user();
+                // $stores = Auth::user()->stores;
+                // $owner = Auth::user();
                 $request->session()->regenerate();
-                return view('/owner', ['store'=> $stores, 'owner' => $owner]);
+                return redirect('/owner');
             }
         } else {
             // dd($request->email);

@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +37,7 @@ Route::get('/contact', function () {
 // MAIN ROUTES FOR LOGIN AND REGISTER
 
 //route to show the register page
-Route::get('/register', function() {
+Route::get('/register', function () {
     return view('register');
 });
 Route::post('/register-user', [UserController::class, 'store']);
@@ -50,7 +53,14 @@ Route::get('/login-user', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 
+// owner page routes
+Route::get('/owner', function () {
+    $stoeId = Auth::user()->stores->id;
+    $StoreProducts = Product::all()->where('store_id', $stoeId);
+    return view('/owner', ['store' => Auth::user()->stores, 'owner' => Auth::user(), 'products' => $StoreProducts]);
+});
 
+Route::post('/add-product', [ProductController::class, 'store']);
 
 
 
@@ -65,9 +75,6 @@ Route::get('profile', function () {
     return view('profile');
 });
 
-Route::get('/owner', function () {
-    return view('owner');
-});
 
 Route::get('checkout', function () {
     return view('checkout');

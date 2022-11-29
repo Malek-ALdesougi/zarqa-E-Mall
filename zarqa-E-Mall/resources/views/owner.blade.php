@@ -51,40 +51,61 @@
                             <div class="row p-1">
                                 <section class="get-in-touch mb-5 right">
                                     <h1 class="title my-font">إضافة منتج جديد</h1>
-                                    <form class="contact-form row" style="text-align: right " enctype="multipart/form-data">
+                                    <form action="add-product" method="POST" class="contact-form row" style="text-align: right " enctype="multipart/form-data">
+                                        @csrf
+
+                                        @error('price')
+                                          <p style="font-size:medium" class="text-danger d-inline mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-field col-lg-6 ">
-                                            <input id="company" class="input-text js-input fs-6 right" type="number"
+                                            <input name="price" id="company" class="input-text js-input fs-6 right" type="number"
                                                 required>
                                             <label class="label mb-4 my-font" for="company">سعر المنتج</label>
                                         </div>
+
+                                        @error('name')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-field col-lg-6 ">
-                                            <input id="email" class="input-text js-input fs-6 right" type="text"
+                                            <input name="name" id="name" class="input-text js-input fs-6 right" type="text"
                                                 required>
-                                            <label class="label mb-4 my-font" for="email">إسم المنتج</label>
+                                            <label class="label mb-4 my-font" for="name">إسم المنتج</label>
                                         </div>
 
 
-
+                                        @error('tag')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-field col-lg-6 right">
-                                            <input id="category" class="input-text js-input right" type="text" required>
-                                            <label class="label mb-4 right my-font" for="category">الفئة</label>
+                                            <input name="tag" id="tag" class="input-text js-input right" type="text" required>
+                                            <label class="label mb-4 right my-font" for="tag">الفئة</label>
                                         </div>
 
+
+                                        @error('quantity')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-field col-lg-6 right">
-                                            <input id="quantity" class="input-text js-input right" type="number" required>
+                                            <input name="quantity" id="quantity" class="input-text js-input right" type="number" required>
                                             <label class="label mb-4 right my-font" for="quantity">الكمية</label>
                                         </div>
 
+                                        @error('description')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class="form-field col-lg-12">
-                                            <input id="message" class="input-text js-input fs-6 right" type="text-area"
+                                            <input name="description" id="description" class="input-text js-input fs-6 right" type="text-area"
                                                 required>
-                                            <label class="label mb-4 my-font" for="message">وصف المنتج</label>
+                                            <label class="label mb-4 my-font" for="description">وصف المنتج</label>
                                         </div>
 
+                                        @error('image')
+                                          <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
+                                        @enderror
                                         <div class=" mb-4">
                                             <label style="color:rgb(81, 115, 160)" for="formFileLg"
                                                 class="form-label my-font fs-6">صورة المنتج</label>
-                                            <input class="form-control right form-control-lg" id="formFileLg"
+                                            <input name="image" class="form-control right form-control-lg" id="formFileLg"
                                                 type="file" />
                                         </div>
 
@@ -96,7 +117,8 @@
                                         </div> --}}
 
                                         <div class="form-field col-lg-12">
-                                            <input name="file" class="submit-btn my-font" type="submit" value="إضافة">
+                                            {{-- <input class="submit-btn my-font" type="submit" value="إضافة"> --}}
+                                            <button class="submit-btn my-font" type="submit">إضافة</button>
                                         </div>
                                     </form>
                                 </section>
@@ -114,6 +136,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <table class="table bg-light table-striped col-lg-12" style="text-align: center">
+
+                        {{$products}}
                         <tbody>
                             <thead>
                                 <th></th>
