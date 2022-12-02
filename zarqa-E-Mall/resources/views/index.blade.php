@@ -29,6 +29,7 @@
             </div>
         </div>
     </section>
+
     <!-- End Our store Section -->
 
     <!-- ======= store Section ======= -->
@@ -38,10 +39,17 @@
             <div class="row d-flex ">
                 <div class="col-lg-8">
                     <ul id="store-flters">
-                        <li style="font-family: 'Lemonada', cursive;" data-filter="*" class="filter-active">الكل</li>
-                        <li style="font-family: 'Lemonada', cursive;" data-filter=".filter-app">ملابس</li>
-                        <li style="font-family: 'Lemonada', cursive;" data-filter=".filter-card">هدايا</li>
-                        <li style="font-family: 'Lemonada', cursive;" data-filter=".filter-web">كهربائيات</li>
+                        @foreach($categories as $category)
+                        <li style="font-family: 'Lemonada', cursive;" ><a href="/index">{{$category}}</a></li>
+                        {{-- <li style="font-family: 'Lemonada', cursive;" >هدايا</li>
+                        <li style="font-family: 'Lemonada', cursive;" >كهربائيات</li>
+                        <li style="font-family: 'Lemonada', cursive;" >أثاث</li>
+                        <li style="font-family: 'Lemonada', cursive;" >ألعاب وهدايا</li>
+                        <li style="font-family: 'Lemonada', cursive;" >ساعات وعطور</li>
+                        <li style="font-family: 'Lemonada', cursive;" >منظفات</li>
+                        <li style="font-family: 'Lemonada', cursive;" class="filter-active">الكل</li>
+                        <li style="font-family: 'Lemonada', cursive;" >مواد تموينية</li> --}}
+                        @endforeach
                     </ul>
                 </div>
 
@@ -53,44 +61,26 @@
 
             <div class="row store-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-                <div class="col-lg-4 col-md-6 store-wrap filter-web">
-                    <div class="store-item">
-                        <a href="store"><img
-                                src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                                class="img-fluid" alt=""><a>
-                                <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                    <p class="right my-font"><strong>إسم المتجر</strong>: ملابس الباشا للملبوسات</p>
-                                    <p class="right my-font fs-6"><strong> فئة المتجر </strong>: اكيد ملابس,اوعي, ثياب</p>
-                                </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 store-wrap filter-web">
-                    <div class="store-item">
-                        <a href="store"><img
-                                src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                                class="img-fluid" alt=""><a>
-                                <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                    <p class="right my-font"><strong>إسم المتجر</strong>: ملابس الباشا للملبوسات</p>
-                                    <p class="right my-font fs-6"><strong> فئة المتجر </strong>: اكيد ملابس,اوعي, ثياب</p>
-                                </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 store-wrap filter-web">
-                    <div class="store-item">
-                        <a href="store"><img
-                                src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                                class="img-fluid" alt=""><a>
-                                <div style="background-color:#1e4356; color:white; padding:20px;" class="details mt-0">
-                                    <p class="right my-font"><strong>إسم المتجر</strong>: ملابس الباشا للملبوسات</p>
-                                    <p class="right my-font fs-6"><strong> فئة المتجر </strong>: اكيد ملابس,اوعي, ثياب</p>
-                                </div>
-                    </div>
-                </div>
-
-
-
+                @foreach ($owners as $owner)
+                    @if ($owner->stores->status === 1)
+                        <div class="col-lg-4 col-md-6 store-wrap filter-web">
+                            <div class="store-item">
+                                <a href="store">
+                                    <img style="display: block; width:100%; height:300px" src="images/{{ $owner->image }}"
+                                        alt="avhellllatar" class="img-fluid">
+                                    <a>
+                                        <div style="background-color:#1e4356; color:white; padding:20px; height: 150px;"
+                                            class="details mt-0">
+                                            <p class="right my-font"><strong>إسم المتجر</strong>:
+                                                {{ $owner->stores->store_name }}</p>
+                                            <p class="right my-font fs-6"><strong> فئة المتجر </strong>:
+                                                {{ $owner->stores->category }}
+                                            </p>
+                                        </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
 
             </div>
         </div>

@@ -134,9 +134,7 @@ class UserController extends Controller
         Auth::login($newOwner);
         $newStore->save();
 
-        // dd($newOwner->image);
-
-        return view('/owner', ['store' => $newOwner->stores, 'owner' => $newOwner]);
+        return redirect('/owner');
     }
 
 

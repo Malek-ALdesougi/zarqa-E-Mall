@@ -86,6 +86,10 @@ h6,
   opacity: 1;
 }
 
+.swal2-title {
+  color: red;
+}
+
 /* input add product style */
 /* 
 input[type="file"] {

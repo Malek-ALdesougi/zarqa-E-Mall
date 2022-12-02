@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\storesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Basic routes 
-Route::get('/index', function () {
-    return view('/index');
-});
+// langing page route 
+Route::get('/index', [storesController::class, 'index']);
 
 Route::get('/about', function () {
     return view('/about');
@@ -53,19 +52,15 @@ Route::get('/login-user', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 
-// owner page routes
+// owner page routes--------------------------
 Route::get('/owner', function () {
     $stoeId = Auth::user()->stores->id;
     $StoreProducts = Product::all()->where('store_id', $stoeId);
     return view('/owner', ['store' => Auth::user()->stores, 'owner' => Auth::user(), 'products' => $StoreProducts]);
 });
-
 Route::post('/add-product', [ProductController::class, 'store']);
-
-
-
-
-
+Route::delete('delete/{id}', [ProductController::class, 'destroy']);
+// end owner page routes----------------------
 
 Route::get('/store', function () {
     return view('/store');

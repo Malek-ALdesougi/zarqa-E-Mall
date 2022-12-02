@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class storesController extends Controller
@@ -13,7 +15,9 @@ class storesController extends Controller
      */
     public function index()
     {
-        //
+        $storeOwner = User::where('roll', 'owner')->get();
+        $categories = ['ملابس', 'هدايا','كهربائيات', 'أثاث','ألعاب وهدايا','ساعات وعطور', 'منظفات', 'الكل','مواد تموينية'];
+        return view('/index', ['owners' => $storeOwner, 'categories'=> $categories]);
     }
 
     /**
