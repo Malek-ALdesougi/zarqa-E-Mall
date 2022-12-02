@@ -161,37 +161,15 @@
     }
   });
 
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let storeContainer = select('.store-container');
-    if (storeContainer) {
-      let storeIsotope = new Isotope(storeContainer, {
-        itemSelector: '.store-wrap',
-        layoutMode: 'fitRows'
-      });
+// return the user to the same section after filter
+  let storesAnchor = document.getElementById('stores-anchor');
+  let target = document.getElementById('malek');
 
-      let storeFilters = select('#store-flters li', true);
-
-      on('click', '#store-flters li', function(e) {
-        e.preventDefault();
-        storeFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        storeIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        storeIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
+  target.onclick(() => {
+    return storesAnchor.click();
+  })
+  
+   
   /**
    * Initiate store lightbox 
    */

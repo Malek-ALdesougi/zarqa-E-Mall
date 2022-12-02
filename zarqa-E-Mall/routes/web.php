@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\storesController;
+use App\Models\Store;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// langing page route 
-Route::get('/index', [storesController::class, 'index']);
+// landing page route --------------------------
+
+Route::get('/index', [storesController::class, 'index'])->name('index');
 
 Route::get('/about', function () {
     return view('/about');
@@ -33,7 +35,11 @@ Route::get('/contact', function () {
     return view('/contact');
 });
 
-// MAIN ROUTES FOR LOGIN AND REGISTER
+
+
+
+
+// MAIN ROUTES FOR LOGIN AND REGISTER-----------------
 
 //route to show the register page
 Route::get('/register', function () {
@@ -52,7 +58,10 @@ Route::get('/login-user', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 
-// owner page routes--------------------------
+
+
+
+// owner page routes------------------------------------
 Route::get('/owner', function () {
     $stoeId = Auth::user()->stores->id;
     $StoreProducts = Product::all()->where('store_id', $stoeId);
@@ -62,9 +71,7 @@ Route::post('/add-product', [ProductController::class, 'store']);
 Route::delete('delete/{id}', [ProductController::class, 'destroy']);
 // end owner page routes----------------------
 
-Route::get('/store', function () {
-    return view('/store');
-});
+Route::get('/store/{id}', [storesController::class, 'show']);
 
 Route::get('profile', function () {
     return view('profile');

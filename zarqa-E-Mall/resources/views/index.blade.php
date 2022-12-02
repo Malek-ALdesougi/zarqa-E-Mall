@@ -11,7 +11,7 @@
                         <span>متجر الزرقاء الإلكتروني</span>
                     </h2>
 
-                    <a style="font-family: 'Lemonada', cursive;" href="#stores"
+                    <a id="stores-anchor" style="font-family: 'Lemonada', cursive;" href="#stores"
                         class="btn-get-started animate__animated animate__fadeInUp">إنتقل للمتاجر </a>
                 </div>
             </div>
@@ -25,7 +25,7 @@
     <section style="margin-top:80px" class="breadcrumbs">
         <div class="container">
             <div id="stores" class="d-flex justify-content-center align-items-center">
-                <h2 class="my-font">كل المتاجر</h2>
+                <h2 class="my-font text-center">كل المتاجر</h2>
             </div>
         </div>
     </section>
@@ -36,53 +36,54 @@
     <section class="store">
         <div class="container">
 
-            <div class="row d-flex ">
+            <div class="row d-flex justify-content-center col-md-12">
                 <div class="col-lg-8">
                     <ul id="store-flters">
-                        @foreach($categories as $category)
-                        <li style="font-family: 'Lemonada', cursive;" ><a href="/index">{{$category}}</a></li>
-                        {{-- <li style="font-family: 'Lemonada', cursive;" >هدايا</li>
-                        <li style="font-family: 'Lemonada', cursive;" >كهربائيات</li>
-                        <li style="font-family: 'Lemonada', cursive;" >أثاث</li>
-                        <li style="font-family: 'Lemonada', cursive;" >ألعاب وهدايا</li>
-                        <li style="font-family: 'Lemonada', cursive;" >ساعات وعطور</li>
-                        <li style="font-family: 'Lemonada', cursive;" >منظفات</li>
-                        <li style="font-family: 'Lemonada', cursive;" class="filter-active">الكل</li>
+                        @foreach ($categories as $category)
+                            <a id="malek" href="{{ route('index', ['category' => $category]) }}">
+                                <li style="font-family: 'Lemonada', cursive;">{{ $category }}</li>
+                            </a>
+                            {{-- <li style="font-family: 'Lemonada', cursive;" class="filter-active">الكل</li>
                         <li style="font-family: 'Lemonada', cursive;" >مواد تموينية</li> --}}
                         @endforeach
                     </ul>
                 </div>
 
                 <div class="col-lg-4 text-right mb-2">
-                    <input type="text" class="">
-                    <button style="backgrund-color:#1e4356" id="search-button">إبحث</button>
+                    <form action="">
+                        <input type="text" name="search" type="text" class="text-end" placeholder="البحث من خلال اسم المتجر">
+                        <button type="submit" style="backgrund-color:#1e4356" id="search-button">إبحث</button>
+                    </form>
                 </div>
             </div>
 
-            <div class="row store-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-                @foreach ($owners as $owner)
-                    @if ($owner->stores->status === 1)
-                        <div class="col-lg-4 col-md-6 store-wrap filter-web">
-                            <div class="store-item">
-                                <a href="store">
-                                    <img style="display: block; width:100%; height:300px" src="images/{{ $owner->image }}"
-                                        alt="avhellllatar" class="img-fluid">
-                                    <a>
-                                        <div style="background-color:#1e4356; color:white; padding:20px; height: 150px;"
-                                            class="details mt-0">
-                                            <p class="right my-font"><strong>إسم المتجر</strong>:
-                                                {{ $owner->stores->store_name }}</p>
-                                            <p class="right my-font fs-6"><strong> فئة المتجر </strong>:
-                                                {{ $owner->stores->category }}
-                                            </p>
-                                        </div>
+            <div class="col-md-12">
+                <div class=" d-flex flex-wrap justify-content-center">
+                    @foreach ($owners as $owner)
+                        @if ($owner->stores->status === 1)
+                            <div class="col-md-4">
+                                <div class="store-item">
+                                    <a href="store/{{$owner->id}}">
+                                        <img style="width:100%; height:300px" src="images/{{ $owner->image }}"
+                                            alt="avhellllatar" class="img-fluid">
+                                        <a>
+                                            <div class="store-div"
+                                                style="background-color:#1e4356; color:white; padding:20px; height: 155px; overflow:scroll"
+                                                class="details mt-0">
+                                                <p class="right my-font"><strong>إسم المتجر</strong>:
+                                                    {{ $owner->stores->store_name }}</p>
+                                                <p class="right my-font fs-6"><strong> فئة المتجر </strong>:
+                                                    {{ $owner->stores->category }}
+                                                </p>
+                                            </div>
+                                </div>
                             </div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
 
+                </div>
             </div>
+
         </div>
     </section>
     <!-- End store Section -->

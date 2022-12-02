@@ -199,7 +199,7 @@
 
 
     {{-- Footer start --}}
-    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <footer id="footer" class="animate__animated animate__fadeInUp">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
