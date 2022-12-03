@@ -63,7 +63,7 @@
                         @if ($owner->stores->status === 1)
                             <div class="col-md-4">
                                 <div class="store-item">
-                                    <a href="store/{{$owner->id}}">
+                                    <a href="store/{{$owner->stores->id}}">
                                         <img style="width:100%; height:300px" src="images/{{ $owner->image }}"
                                             alt="avhellllatar" class="img-fluid">
                                         <a>
@@ -76,6 +76,10 @@
                                                     {{ $owner->stores->category }}
                                                 </p>
                                             </div>
+                                             {{-- also nothing new !!!!!!!!!!!!! --}}
+                                            {{-- <form action="/store/{{$owner->id}}" method="GET">
+                                                <button type="submit">details store</button>
+                                            </form> --}}
                                 </div>
                             </div>
                         @endif

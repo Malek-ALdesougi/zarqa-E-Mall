@@ -62,30 +62,31 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 
 // owner page routes------------------------------------
+
+// i have did this in the controllor because i just can... also this route need to access it from differnt pages 
 Route::get('/owner', function () {
     $stoeId = Auth::user()->stores->id;
     $StoreProducts = Product::all()->where('store_id', $stoeId);
     return view('/owner', ['store' => Auth::user()->stores, 'owner' => Auth::user(), 'products' => $StoreProducts]);
 });
+
 Route::post('/add-product', [ProductController::class, 'store']);
 Route::delete('delete/{id}', [ProductController::class, 'destroy']);
 // end owner page routes----------------------
 
+
+
+
 Route::get('/store/{id}', [storesController::class, 'show']);
 
-Route::get('profile', function () {
+
+
+Route::get('/profile', function () {
     return view('profile');
 });
-
-
-Route::get('checkout', function () {
+Route::get('/checkout', function () {
     return view('checkout');
 });
-
-
-// Route::get('register', function () {
-//     return view('register');
-// });
 
 
 

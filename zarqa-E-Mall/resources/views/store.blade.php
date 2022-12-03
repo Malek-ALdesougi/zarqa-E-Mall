@@ -1,6 +1,10 @@
 @extends('layout.master')
 @section('new-class', 'second-nav')
 
+@section('css')
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+@endsection
+
 @section('content')
 
     <!-- ======= Our store Section ======= -->
@@ -28,10 +32,10 @@
 
                 <div class="col-lg-6">
                     <div class="store-details-slider swiper">
-                        <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-wrapper align-items-center">                        
                             <div class="swiper-slide">
-                                <img src="https://media.istockphoto.com/photos/all-your-necessities-stored-in-one-place-picture-id1157106624?k=20&m=1157106624&s=612x612&w=0&h=jLXRK4qRL_3QITpschx1Wy2Aj2Vyy47Q1Q_R7hVcPQg="
-                                    alt="">
+                                <img src="../images/{{$store->user->image}}"
+                                    alt="nope">
                             </div>
                         </div>
                     </div>
@@ -42,7 +46,7 @@
                         <h3 style="text-align: right; font-family: 'Lemonada', cursive;">معلومات عن المتجر</h3>
                         <ul>
                             <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>إسم
-                                    المتجر</strong>:اواعي</li>
+                                    المتجر</strong>:{{$store->store_name}}</li>
                             <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong> الفئة</strong>:ملابس
                             </li>
                             <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>العنوان </strong>:شارع
@@ -53,6 +57,7 @@
                     </div>
                     <div class="store-description">
                         <h2 style="text-align: right; font-family: 'Lemonada', cursive;">وصف المتجر</h2>
+                        {{-- {{$owner[0]->image}} --}}
                         <p class="right my-font">
                             متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
                             متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة

@@ -76,10 +76,13 @@ class storesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        // dd($request->id);
-        return view('/store'. $request->$id);
+        // $currnetStoreOwner = User::find($id)->get();
+        $currentStore = Store::find($id);
+        // dd($currentStore[0]->products);
+        // dd($currentStore);
+        return view('/store' , ['store' => $currentStore]);
     }
 
     /**

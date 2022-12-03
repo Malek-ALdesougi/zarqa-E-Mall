@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/zoomify-logo.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{asset('assets/img/zoomify-logo.png')}}" rel="icon">
+    <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,33 +19,34 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="{{asset('assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css')}}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Lemonada&family=Mada:wght@200&family=Scheherazade+New:wght@700&display=swap"
         rel="stylesheet">
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css')}}" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    @yield('css')
 
     {{-- form style cdn --}}
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="{{asset('//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css')}}" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="{{asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap')}}" rel="stylesheet" />
     <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css')}}" rel="stylesheet" />
 
     <!-- =======================================================
   * Template Name: Moderna - v4.10.1
@@ -85,25 +86,25 @@
                     @endauth
 
                     @guest
-                    <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="login"
+                    <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="/login"
                             style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
                     @endguest
 
 
-                    <li><a class="{{ str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="contact"
+                    <li><a class="{{ str_contains(Request::url(), '/contact') ? 'active' : '' }}" href="/contact"
                             style="font-family: 'Lemonada', cursive;">تواصل معنا</a></li>
 
-                    <li><a class="{{ str_contains(Request::url(), '/about') ? 'active' : '' }}" href="about"
+                    <li><a class="{{ str_contains(Request::url(), '/about') ? 'active' : '' }}" href="/about"
                             style="font-family: 'Lemonada', cursive;">من نحن</a></li>
 
-                    <li><a class="{{ str_contains(Request::url(), '/index') ? 'active' : '' }}" href="index"
+                    <li><a class="{{ str_contains(Request::url(), '/index') ? 'active' : '' }}" href="/index"
                             style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
                     </li>
                 </ul>
             </nav>
             <!-- .navbar -->
             <div class="logo">
-                <h1 class="text-light"><a href="index"><span style="font-family: none;">Zarqa E-Mall</span></a></h1>
+                <h1 class="text-light"><a href="/index"><span style="font-family: none;">Zarqa E-Mall</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -199,7 +200,7 @@
 
 
     {{-- Footer start --}}
-    <footer id="footer" class="animate__animated animate__fadeInUp">
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
@@ -278,14 +279,14 @@
     <!-- Vendor JS Files -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('script')
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
+    <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
     {{-- form style cdn --}}
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -296,10 +297,14 @@
     </script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+
+    <script>
+        AOS.init();
+      </script>
 
     <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+    <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js')}}"></script>
 
 </body>
 
