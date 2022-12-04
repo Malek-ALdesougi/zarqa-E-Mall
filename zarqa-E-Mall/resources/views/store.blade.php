@@ -2,7 +2,7 @@
 @section('new-class', 'second-nav')
 
 @section('css')
-<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -30,12 +30,11 @@
             <div class="row gy-4">
                 <div class="col-lg-1"></div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 d-flex align-items-center">
                     <div class="store-details-slider swiper">
-                        <div class="swiper-wrapper align-items-center">                        
+                        <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="../images/{{$store->user->image}}"
-                                    alt="nope">
+                                <img width="400px" height="450px" src="../images/{{ $store->user->image }}" alt="nope">
                             </div>
                         </div>
                     </div>
@@ -46,27 +45,21 @@
                         <h3 style="text-align: right; font-family: 'Lemonada', cursive;">معلومات عن المتجر</h3>
                         <ul>
                             <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>إسم
-                                    المتجر</strong>:{{$store->store_name}}</li>
-                            <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong> الفئة</strong>:ملابس
+                                    المتجر</strong>:{{ $store->store_name }}</li>
+                            <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>
+                                    الفئة</strong>:{{ $store->category }}
                             </li>
-                            <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>العنوان </strong>:شارع
-                                السعادة-شارع الأطفال</li>
+                            <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>العنوان
+                                </strong>:{{ $store->user->address }} </li>
                             <li style="text-align: right; font-family: 'Lemonada', cursive;"><strong>الهاتف
-                                </strong>:87541225511</li>
+                                </strong>:{{ $store->user->phone }}</li>
                         </ul>
-                    </div>
-                    <div class="store-description">
-                        <h2 style="text-align: right; font-family: 'Lemonada', cursive;">وصف المتجر</h2>
-                        {{-- {{$owner[0]->image}} --}}
-                        <p class="right my-font">
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                            متجر رائع ويحتوي على العديد من الخيارات بأسعار منافسة
-                        </p>
+                        <div class="store-description">
+                            <h2 style="text-align: right; font-family: 'Lemonada', cursive;">وصف المتجر</h2>
+                            <p class="des" class=" right my-font">
+                                {{ $store->description }}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,119 +70,48 @@
     {{-- store products section --}}
 
 
+
     <div style="padding-right:0; padding-left:30px;" class="row  g-4 col-md-12 d-flex justify-content-evenly">
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id1354441996?b=1&k=20&m=1354441996&s=170667a&w=0&h=O4JDagXhIh1N13PNN6G4_L5KB5QPZryin7FOrZnzYvc="
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 style="font-family: 'Lemonada', cursive; font-weight:bolder" class="card-title right">جلاية سوبر
-                    </h5><br>
-                    <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive">السعر&nbsp:77دأ</strong></p>
-                    <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive">الكمية المتوفرة&nbsp:7</strong></p>
 
-                    <!-- Button trigger modal -->
-                    <button style="background-color: #1e4356;" type="button" class="btn my-font" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <span style="background-color: #1e4356; color:white; font-family:'Lemonada', cursive">التفاصيل</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
+        @if ($store->products)
+            @foreach ($store->products as $product)
+                <div class="col-sm-4 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img width="300px;" height="200px;" src="../images/{{ $product->image }}" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 style="font-family: 'Lemonada', cursive; font-weight:bolder" class="card-title right">
+                                {{ $product->name }}
+                            </h5><br>
+                            <div class="text-center d-flex justify-content-end flex-wrap">
+                                {{-- <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive;">JOD
+                                    /{{ $product->price }}السعر :<span></span></strong></p> --}}
+                                <p style="text-align:right; "><strong
+                                        style="color:#1e4356; font-family:'Lemonada', cursive">الكمية :
+                                        {{ $product->quantity }}</strong></p>
+                                <p style="text-align:right; "><strong
+                                        style="color:#1e4356; font-family:'Lemonada', cursive;">السعر دأ :
+                                        {{ $product->quantity }}</strong></p>
+                            </div>
 
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content. This content is a little bit longer.</p>
+                            <!-- Button trigger modal -->
+                            <div class="d-flex justify-content-center">
+                                <button id="modal-button" data-id="{{$product->id}}" onclick="(() => { console.log({{ $product->id }}) })()"
+                                        style="background-color: #1e4356;" type="button" class="btn my-font"
+                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <span class="my-font text-light my-color">التفاصيل</span>
+                                    </button>
+                                    <button class="btn btn-success">التفاصيل</button>
+                                    <button class="btn btn-primary">إضافة إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">ملابس خريفية </h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                        content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
+            @endforeach
+        @else
+            <h1>nothig to show </h1>
+        @endif
     </div>
-
 
 
 
@@ -199,22 +121,23 @@
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        class="card-img-top" alt="...">
+                    <img height="400px;" width="200px;" src='../images/' class="card-img-top" alt="...">
                     <div class="modal-header d-flex justify-content-end">
                         <h5 style="font-family:'Lemonada', cursive; font-weight:bolder;" class="right"
-                            id="staticBackdropLabel">جلاية سوبر</h5>
+                            id="staticBackdropLabel">uuuuu</h5>
                     </div>
                     <div class="modal-body">
                         <p class="right"><strong>:الوصف</strong></p>
-                        <p class="card-text right">وصف المنتج مع القليبل من الكلام ومحدود بعدد حروف معين للحفاظ على التناسق
+                        <p class="card-text right">9ikkkk
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <button style="background-color: #1e4356; color:white" type="button" class="btn">Add to cart<i style="margin-left:3px;" class="fas fa-shopping-cart"></i></button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق</button>
+                        <button style="background-color: #1e4356; color:white" type="button" class="btn">أضف إلى السلة<i
+                                style="margin-left:3px;" class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

@@ -80,7 +80,7 @@ class storesController extends Controller
     {
         // $currnetStoreOwner = User::find($id)->get();
         $currentStore = Store::find($id);
-        // dd($currentStore[0]->products);
+        // dd($currentStore->products);
         // dd($currentStore);
         return view('/store' , ['store' => $currentStore]);
     }

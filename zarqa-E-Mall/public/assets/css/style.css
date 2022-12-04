@@ -27,6 +27,18 @@ font-family:'Lemonada', cursive;
  color: #1e4356;
 }
 
+.store-details .store-description p{
+  font-size: large;
+  height:auto;
+  font-family : 'Lemonada', cursive;
+   overflow:scroll;
+  text-align: right !important;
+}
+
+.store-details .store-description p::-webkit-scrollbar {
+  display: none;
+}
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -1483,10 +1495,6 @@ section {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
-}
-
-.store-details .store-description p {
-  padding: 0;
 }
 
 /*--------------------------------------------------------------
