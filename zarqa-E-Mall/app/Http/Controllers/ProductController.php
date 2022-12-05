@@ -25,6 +25,13 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function searchProduct(Request $request)
+     {
+        if($request->product){
+            dd($request->product);
+        }
+     }
     public function create()
     {
         //

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Store;
 use App\Models\User;
+use App\Models\Store;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class storesController extends Controller
@@ -30,7 +31,7 @@ class storesController extends Controller
         }
 
         //check if there is no filter     OR    if the route is empty     OR        the search bar is empty
-        if ($request->category == '' || $request->category == 'الكل' ) {
+        if ($request->category == '' || $request->category == 'الكل') {
             $storeOwner = User::where('roll', 'owner')->get();
             return view('/index', ['owners' => $storeOwner, 'categories' => $categories]);
         }
@@ -76,13 +77,22 @@ class storesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+     
+    public function show(Request $request, $id)
     {
-        // $currnetStoreOwner = User::find($id)->get();
+        //show all product and the store name for the current store 
+
+        // make a variable to store the value of the current products and change it if there is search 
         $currentStore = Store::find($id);
-        // dd($currentStore->products);
-        // dd($currentStore);
-        return view('/store' , ['store' => $currentStore]);
+        $currentStoreProducts = $currentStore->products;
+        
+
+        if ($request->product) {
+            $currentStoreProducts = Product::where('name', 'LIKE', '%' . $request->product . '%')->get();
+        } 
+
+        return view('/store', ['store' => $currentStore, 'products' => $currentStoreProducts]);
     }
 
     /**

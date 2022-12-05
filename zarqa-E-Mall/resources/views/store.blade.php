@@ -67,42 +67,88 @@
     </section>
     <!-- End store Details Section -->
 
+
+    <section style="margin-top:30px" class="breadcrumbs">
+        <div class="container">
+            <div id="stores" class="d-flex justify-content-center align-items-center">
+                <h2 class="my-font text-center"> البضائع</h2>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="row justify-content-center col-md-12">
+        <div class="col-lg-4 text-right mb-2 mt-4">
+            <form action="">
+                <input type="text" name="product" type="text" class="text-end" placeholder="البحث من خلال اسم المنتج">
+                <button type="submit" style="backgrund-color:#1e4356" id="search-button">إبحث</button>
+            </form>
+        </div>
+    </div>
+
     {{-- store products section --}}
 
+    <div style="padding-right:0; padding-left:30px;" class="row mt-5 g-4 col-md-12 d-flex justify-content-evenly">
 
-
-    <div style="padding-right:0; padding-left:30px;" class="row  g-4 col-md-12 d-flex justify-content-evenly">
-
-        @if ($store->products)
-            @foreach ($store->products as $product)
-                <div class="col-sm-4 col-md-4 col-lg-3">
+        @if ($products)
+            @foreach ($products as $product)
+                <div class="col-sm-4 col-md-6 col-lg-3">
                     <div class="card">
                         <img width="300px;" height="200px;" src="../images/{{ $product->image }}" class="card-img-top"
                             alt="...">
                         <div class="card-body">
-                            <h5 style="font-family: 'Lemonada', cursive; font-weight:bolder" class="card-title right">
+                            <h5 class="my-font fw-bolder text-center" class="card-title right">
                                 {{ $product->name }}
                             </h5><br>
-                            <div class="text-center d-flex justify-content-end flex-wrap">
+                            <div class="justify-content-center flex-wrap">
                                 {{-- <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive;">JOD
                                     /{{ $product->price }}السعر :<span></span></strong></p> --}}
-                                <p style="text-align:right; "><strong
-                                        style="color:#1e4356; font-family:'Lemonada', cursive">الكمية :
-                                        {{ $product->quantity }}</strong></p>
-                                <p style="text-align:right; "><strong
-                                        style="color:#1e4356; font-family:'Lemonada', cursive;">السعر دأ :
-                                        {{ $product->quantity }}</strong></p>
+                                    <p class="right text-end"><strong class="my-color my-font">السعر دأ :
+                                            {{ $product->quantity }}</strong></p>
+                                    <p class="right text-end "><strong class=" mb-3 my-color my-font">الكمية المتوفرة:
+                                            {{ $product->quantity }}</strong></p>
                             </div>
 
                             <!-- Button trigger modal -->
-                            <div class="d-flex justify-content-center">
-                                <button id="modal-button" data-id="{{$product->id}}" onclick="(() => { console.log({{ $product->id }}) })()"
-                                        style="background-color: #1e4356;" type="button" class="btn my-font"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <span class="my-font text-light my-color">التفاصيل</span>
-                                    </button>
-                                    <button class="btn btn-success">التفاصيل</button>
-                                    <button class="btn btn-primary">إضافة إلى السلة</button>
+                            <div class="d-flex justify-content-evenly flex-wrap gap-3">
+                                <button id="modal-button" style="background-color: #6d99b0;" type="button"
+                                    class="btn my-font w-100" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop{{ $product->id }}">
+                                    <span class="my-font text-light my-color">التفاصيل</span>
+                                </button>
+
+                                <button style="background-color: #1e4356; color:white" type="button" class="btn w-100">
+                                    <span class="my-font text-light my-color">أضف إلى السلة</span>
+                                    <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop{{ $product->id }}" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            {{-- <img height="400px;" width="200px;" src='../images/{{ $product->image }}' class="card-img-top"
+                                alt="..."> --}}
+                            <div class="modal-header d-flex justify-content-center">
+                                <h5 class="my-font fw-bolder my-color my-font"
+                                    id="staticBackdropLabel">{{ $product->name }}</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p class="right"><strong  class="my-color my-font">:الوصف</strong></p>
+                                <p class="card-text right my-color my-font"> {{ $product->description }}
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><span class="my-font text-light my-color">إغلاق</span></button>
+                                {{-- <button style="background-color: #1e4356; color:white" type="button" class="btn">
+                                    <span class="my-font text-light my-color">أضف إلى السلة</span>
+                                    <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
+                                </button> --}}
                             </div>
                         </div>
                     </div>
@@ -115,29 +161,5 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <img height="400px;" width="200px;" src='../images/' class="card-img-top" alt="...">
-                    <div class="modal-header d-flex justify-content-end">
-                        <h5 style="font-family:'Lemonada', cursive; font-weight:bolder;" class="right"
-                            id="staticBackdropLabel">uuuuu</h5>
-                    </div>
-                    <div class="modal-body">
-                        <p class="right"><strong>:الوصف</strong></p>
-                        <p class="card-text right">9ikkkk
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق</button>
-                        <button style="background-color: #1e4356; color:white" type="button" class="btn">أضف إلى السلة<i
-                                style="margin-left:3px;" class="fas fa-shopping-cart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection

@@ -76,10 +76,6 @@
                                                     {{ $owner->stores->category }}
                                                 </p>
                                             </div>
-                                             {{-- also nothing new !!!!!!!!!!!!! --}}
-                                            {{-- <form action="/store/{{$owner->id}}" method="GET">
-                                                <button type="submit">details store</button>
-                                            </form> --}}
                                 </div>
                             </div>
                         @endif

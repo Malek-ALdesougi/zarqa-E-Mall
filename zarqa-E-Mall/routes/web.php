@@ -75,8 +75,7 @@ Route::delete('delete/{id}', [ProductController::class, 'destroy']);
 // end owner page routes----------------------
 
 
-
-
+//route hanel show specific store
 Route::get('/store/{id}', [storesController::class, 'show']);
 
 
@@ -88,9 +87,6 @@ Route::get('/checkout', function () {
     return view('checkout');
 });
 
-Route::get('single-product', function() {
-    return view('single-product');
-});
 
 
 //--------------///////////////////////// DASHBOARD //////////////////////------------//
