@@ -50,50 +50,36 @@ class storesController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
-     
+
+    //show all product and the store name for the current store 
     public function show(Request $request, $id)
     {
-        //show all product and the store name for the current store 
-
-        // make a variable to store the value of the current products and change it if there is search 
         $currentStore = Store::find($id);
-        $currentStoreProducts = $currentStore->products;
-        
+        $allProducts = $currentStore->products;
+
+        //do the filter for products
+        if($request->filter == 'des'){
+            $allProducts = Product::where('store_id', $id)->orderBy('price', 'desc')->get();
+            // dd($allProducts);
+        }
+
+        if($request->filter == 'asc'){
+            $allProducts = Product::where('store_id', $id)->orderBy('price', 'asc')->get();
+            // dd($allProducts);
+        }
+        // make a variable to store the value of the current products and change it if there is search 
 
         if ($request->product) {
-            $currentStoreProducts = Product::where('name', 'LIKE', '%' . $request->product . '%')->get();
-        } 
+            $allProducts = Product::where('name', 'LIKE', '%' . $request->product . '%')->get();
+        }
 
-        return view('/store', ['store' => $currentStore, 'products' => $currentStoreProducts]);
+        return view('/store', ['store' => $currentStore, 'products' => $allProducts]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

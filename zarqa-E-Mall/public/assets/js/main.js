@@ -181,6 +181,11 @@
         storesAnchor.click();
     }
 
+    //handel the current selected valus of filter products
+    url=url.substring(url.length-3,url.length);
+    let current_selected = document.getElementById(url)
+    current_selected.selected="selected";
+  
     /**
      * Initiate store lightbox
      */

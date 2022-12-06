@@ -77,12 +77,33 @@
     </section>
 
 
-    <div class="row justify-content-center col-md-12">
-        <div class="col-lg-4 text-right mb-2 mt-4">
-            <form action="">
-                <input type="text" name="product" type="text" class="text-end" placeholder="البحث من خلال اسم المنتج">
-                <button type="submit" style="backgrund-color:#1e4356" id="search-button">إبحث</button>
-            </form>
+    <div class="row col-md-12">
+        <div class="d-flex justify-content-center col-md-12 text-right mb-2 mt-5 flex-wrap">
+
+            {{-- -------- Filter button ----- --}}
+            <div>
+                <form class="d-flex" action="" method="GET">
+                    <select name="filter" class="form-select my-font">
+                        <option value="asc" class="my-font">--نوع التصفية--</option>
+                        <option id="asc" value="asc" class="my-font">من الأصغر للأكبر</option>
+                        <option id="des" class="selected" value="des">من الأكبر للأصغر</option>
+                    </select>
+                    <button type="submit" style="background-color: #1e4356; width:200px" class="btn text-light ms-1"
+                        type="button">
+                        <p class="my-font d-inline">تصفية حسب السعر </p>
+                    </button>
+                </form>
+            </div>
+
+            {{-- ------ Search form ---- --}}
+            <div>
+                <form action="" class="ms-4">
+                    <input type="text" name="product" type="text" class="text-end rounded p-1"
+                        placeholder="البحث من خلال اسم المنتج">
+                    <button class="rounded p-1" type="submit" style="backgrund-color:#1e4356; width:200px"
+                        id="search-button">إبحث</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -103,10 +124,10 @@
                             <div class="justify-content-center flex-wrap">
                                 {{-- <p style="text-align:right; "><strong style="color:#1e4356; font-family:'Lemonada', cursive;">JOD
                                     /{{ $product->price }}السعر :<span></span></strong></p> --}}
-                                    <p class="right text-end"><strong class="my-color my-font">السعر دأ :
-                                            {{ $product->quantity }}</strong></p>
-                                    <p class="right text-end "><strong class=" mb-3 my-color my-font">الكمية المتوفرة:
-                                            {{ $product->quantity }}</strong></p>
+                                <p class="right text-end"><strong class="my-color my-font">السعر دأ :
+                                        {{ $product->price }}</strong></p>
+                                <p class="right text-end "><strong class=" mb-3 my-color my-font">الكمية المتوفرة:
+                                        {{ $product->quantity }}</strong></p>
                             </div>
 
                             <!-- Button trigger modal -->
@@ -135,16 +156,17 @@
                             {{-- <img height="400px;" width="200px;" src='../images/{{ $product->image }}' class="card-img-top"
                                 alt="..."> --}}
                             <div class="modal-header d-flex justify-content-center">
-                                <h5 class="my-font fw-bolder my-color my-font"
-                                    id="staticBackdropLabel">{{ $product->name }}</h5>
+                                <h5 class="my-font fw-bolder my-color my-font" id="staticBackdropLabel">
+                                    {{ $product->name }}</h5>
                             </div>
                             <div class="modal-body">
-                                <p class="right"><strong  class="my-color my-font">:الوصف</strong></p>
+                                <p class="right"><strong class="my-color my-font">:الوصف</strong></p>
                                 <p class="card-text right my-color my-font"> {{ $product->description }}
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><span class="my-font text-light my-color">إغلاق</span></button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><span
+                                        class="my-font text-light my-color">إغلاق</span></button>
                                 {{-- <button style="background-color: #1e4356; color:white" type="button" class="btn">
                                     <span class="my-font text-light my-color">أضف إلى السلة</span>
                                     <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>

@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('assets/img/zoomify-logo.png')}}" rel="icon">
-    <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/img/zoomify-logo.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,34 +19,39 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{asset('assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css') }}"
+        rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Lemonada&family=Mada:wght@200&family=Scheherazade+New:wght@700&display=swap"
         rel="stylesheet">
     <!-- CSS only -->
-    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css')}}" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css') }}"
+        rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous">
     <!-- Template Main CSS File -->
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     @yield('css')
 
     {{-- form style cdn --}}
-    <link href="{{asset('//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
+    <link href="{{ asset('//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css') }}" rel="stylesheet"
+        id="bootstrap-css">
 
     <!-- Font Awesome -->
-    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css') }}"
+        rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="{{asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap')}}" rel="stylesheet" />
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap') }}"
+        rel="stylesheet" />
     <!-- MDB -->
-    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css') }}" rel="stylesheet" />
 
     <!-- =======================================================
   * Template Name: Moderna - v4.10.1
@@ -65,29 +70,32 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
                     <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
-                            style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i><span id="cartNumber" class="text-light">7</span></a></li>
-                    
+                            style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i><span
+                                id="cartNumber" class="text-light">7</span></a></li>
+
                     @auth
-                    <li>
-                        {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
+                        <li>
+                            {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
                             <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
                         </a> --}}
 
-                        <li class="dropdown"><a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
-                            <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
-                        </a>
+                        <li class="dropdown"><a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}"
+                                href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي
+                                <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
+                            </a>
                             <ul>
-                              <li class="d-flex justify-content-end"><a href="logout"><span class="my-font right">تسجيل الخروج</span></a></li>
-                              {{-- <li><a href="#">Deep Drop Down 2</a></li>
+                                <li class="d-flex justify-content-end"><a href="logout"><span class="my-font right">تسجيل
+                                            الخروج</span></a></li>
+                                {{-- <li><a href="#">Deep Drop Down 2</a></li>
                               <li><a href="#">Deep Drop Down 3</a></li> --}}
                             </ul>
-                          </li>
-                    </li>
+                        </li>
+                        </li>
                     @endauth
 
                     @guest
-                    <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="/login"
-                            style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
+                        <li><a class="{{ str_contains(Request::url(), '/login') ? 'active' : '' }}" href="/login"
+                                style="font-family: 'Lemonada', cursive;">تسجيل الدخول</a></li>
                     @endguest
 
 
@@ -279,14 +287,17 @@
     <!-- Vendor JS Files -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('script')
-    <script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
-    <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
-    <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
     {{-- form style cdn --}}
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -297,14 +308,15 @@
     </script>
 
     <!-- Template Main JS File -->
-    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script>
         AOS.init();
-      </script>
+    </script>
 
     <!-- MDB -->
-    <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js') }}">
+    </script>
 
 </body>
 
