@@ -186,6 +186,38 @@
     let current_selected = document.getElementById(url)
     current_selected.selected="selected";
   
+
+
+    window.addEventListener('load', () => {
+        let storeContainer = select('.store-container');
+        // if (storeContainer) {
+        //   let storeIsotope = new Isotope(storeContainer, {
+        //     itemSelector: '.store-wrap',
+        //     layoutMode: 'fitRows'
+        //   });
+    
+          let storeFilters = select('#store-flters li', true);
+    
+          on('click', '#store-flters li', function(e) {
+            e.preventDefault();
+            storeFilters.forEach(function(el) {
+              el.classList.remove('filter-active');
+            });
+            this.classList.add('filter-active');
+    
+            storeIsotope.arrange({
+              filter: this.getAttribute('data-filter')
+            });
+            storeIsotope.on('arrangeComplete', function() {
+              AOS.refresh()
+            });
+          }, true);
+        // }
+    
+      });
+
+
+
     /**
      * Initiate store lightbox
      */

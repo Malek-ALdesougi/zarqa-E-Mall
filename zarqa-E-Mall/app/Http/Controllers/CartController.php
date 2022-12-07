@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Cart;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -14,7 +17,6 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -35,7 +37,21 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::find($request->id);
+        $user = User::find($request->current_user);
+        $quantity = $request->quantity;
+        if ($quantity == null) {
+            $quantity = 1;
+        }
+
+        $cart = new Cart;
+        $cart->user_id = $user->id;
+        $cart->product_id = $product->id;
+        $cart->quantity = $quantity;
+
+        // Alert::success('Success Title', 'Success Message');
+        $cart->save();
+        return back()->with('success','Product added successfully');
     }
 
     /**
@@ -46,7 +62,6 @@ class CartController extends Controller
      */
     public function show(Cart $cart)
     {
-        //
     }
 
     /**

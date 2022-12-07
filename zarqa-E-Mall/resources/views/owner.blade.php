@@ -163,7 +163,6 @@
                                             <form id="submitBtn" action="/delete/{{ $product->id }}" method="POST">
                                                 @csrf
                                                 @method('delete')
-                                                {{-- <input id="productId" type="hidden" value={{$product->id}}> --}}
                                                 <button class="btn btn-danger" type="submit"
                                                     onclick="event.preventDefault()
                                                 const swalWithBootstrapButtons = Swal.mixin({

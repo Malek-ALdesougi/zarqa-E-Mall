@@ -8,6 +8,9 @@
 @section('content')
 
     <!-- ======= Our store Section ======= -->
+    @if (session('success'))
+        <script>alert('product added successfully !!')</script>
+    @endif
     <section class="breadcrumbs">
         <div class="container">
 
@@ -81,7 +84,7 @@
         <div class="d-flex justify-content-center col-md-12 text-right mb-2 mt-5 flex-wrap">
 
             {{-- -------- Filter button ----- --}}
-            <div>
+            <div class="col-md-4 mb-3">
                 <form class="d-flex" action="" method="GET">
                     <select name="filter" class="form-select my-font">
                         <option value="asc" class="my-font">--نوع التصفية--</option>
@@ -96,11 +99,11 @@
             </div>
 
             {{-- ------ Search form ---- --}}
-            <div>
+            <div class="col-md-6">
                 <form action="" class="ms-4">
                     <input type="text" name="product" type="text" class="text-end rounded p-1"
                         placeholder="البحث من خلال اسم المنتج">
-                    <button class="rounded p-1" type="submit" style="backgrund-color:#1e4356; width:200px"
+                    <button class="rounded p-1" type="submit" style="backgrund-color:#1e4356;"
                         id="search-button">إبحث</button>
                 </form>
             </div>
@@ -130,20 +133,32 @@
                                         {{ $product->quantity }}</strong></p>
                             </div>
 
-                            <!-- Button trigger modal -->
-                            <div class="d-flex justify-content-evenly flex-wrap gap-3">
+                            <div class="d-flex justify-content-center">
                                 <button id="modal-button" style="background-color: #6d99b0;" type="button"
-                                    class="btn my-font w-100" data-bs-toggle="modal"
+                                    class="btn my-font col-md-6" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop{{ $product->id }}">
                                     <span class="my-font text-light my-color">التفاصيل</span>
                                 </button>
+                            </div>
+                            <hr>
+                            <!-- Button trigger modal -->
+                            <div class="d-flex justify-content-evenly flex-wrap gap-3">
+                                <form class="col-md-12 d-flex justify-content-center flex-wrap"
+                                    action="/add-cart/{{ $product->id }}" method="POST">
+                                    @csrf
+                                    <div class="d-flex justify-content-evenly mb-2">
+                                        <input name="current_user" type="hidden" value="{{ Auth::user()->id }}">
+                                        <input name="quantity" id="quantity" class="w-25" type="number"
+                                            placeholder="1">
+                                        <label class="my-font" for="quantity">الكمية المطلوبة</label>
+                                    </div>
 
-                                <button style="background-color: #1e4356; color:white" type="button" class="btn w-100">
-                                    <span class="my-font text-light my-color">أضف إلى السلة</span>
-                                    <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
-                                </button>
-
-
+                                    <button style="background-color: #1e4356; color:white" type="submit"
+                                        class="btn col-md-12">
+                                        <span class="my-font text-light my-color">أضف إلى السلة</span>
+                                        <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

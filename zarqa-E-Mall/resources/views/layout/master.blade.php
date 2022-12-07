@@ -38,6 +38,9 @@
         crossorigin="anonymous">
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    {{-- sweet alert style --}}
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+
     @yield('css')
 
     {{-- form style cdn --}}
@@ -59,6 +62,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    @include('sweetalert::alert')
+
 </head>
 
 <body>
@@ -149,6 +154,7 @@
                                                         <div style="margin: 0%; padding:0%;" class="card-body w-50">
                                                             <div style="width:200px"
                                                                 class="d-flex justify-content-between">
+
                                                                 <div
                                                                     class="d-flex flex-row align-items-center col-md-12">
                                                                     <div>
@@ -189,7 +195,7 @@
                     <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
                         <p style="display: inline" class="my-font">إغلاق</p>
                     </button>
-                    <a href="checkout"><button type="button" class="btn btn-success">
+                    <a href="/checkout"><button type="button" class="btn btn-success">
                             <p style="display:inline" class="my-font">الإنتقال للدفع</p>
                         </button></a>
                 </div>
@@ -307,6 +313,9 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
 
+    {{-- sweet alert cnd --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
@@ -318,6 +327,7 @@
     <script type="text/javascript" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js') }}">
     </script>
 
+    @include('sweetalert::alert')
 </body>
 
 </html>
