@@ -190,7 +190,7 @@
 
     window.addEventListener('load', () => {
         let storeContainer = select('.store-container');
-        // if (storeContainer) {
+        // if (storeContainer) {e
         //   let storeIsotope = new Isotope(storeContainer, {
         //     itemSelector: '.store-wrap',
         //     layoutMode: 'fitRows'

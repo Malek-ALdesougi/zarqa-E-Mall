@@ -36,7 +36,7 @@
     <section class="store">
         <div class="container">
 
-            <div class="row d-flex justify-content-center col-md-12">
+            <div class="row d-flex justify-content-center col-md-12 " style=" direction: rtl">
                 <div class="col-lg-8">
                     <ul id="store-flters">
                         @foreach ($categories as $category)

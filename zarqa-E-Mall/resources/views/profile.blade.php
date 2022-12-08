@@ -6,10 +6,10 @@
 
 
 
-    <section style="background-color: #eee;">
+    <section style="background-color: #eee; ">
         <div class="container py-5">
             {{-- user information card --}}
-            <div class="row">
+            <div class="row"style=" direction: rtl;" >
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div style="background-color:#1e4356" class="card-body text-center">
@@ -77,9 +77,9 @@
 
         <div class="container">
             <div class="col-md-12 d-flex justify-content-center mb-3 fs-4 fw-bolder my-font">سجل المشتريات</div>
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-12">
-                    <table class="table bg-light table-striped" style="text-align: center">
+                    <table class="table bg-light table-striped shadow" style="text-align: center">
                         <tbody>
                             <thead>
                                 <th class="my-font">حذف</th>
