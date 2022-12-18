@@ -15,7 +15,8 @@ class UserMessage extends Model
         'message'
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class);
     }
 }

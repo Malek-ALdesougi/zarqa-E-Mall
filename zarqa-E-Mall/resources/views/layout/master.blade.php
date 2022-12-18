@@ -75,9 +75,12 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
                     <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
-                            style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i><span
-                                id="cartNumber" class="text-light">7</span></a></li>
-
+                            style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i>
+                            @if(auth()->user())
+                            <span id="cartNumber" class="text-light">{{App\Models\Cart::where('user_id', auth()->user()->id)->count()}}</span>
+                            @endif
+                        </a>
+                    </li>
                     @auth
                         <li>
                             {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
@@ -148,37 +151,50 @@
                                         <div class="card-body p-4">
                                             <div class="row">
                                                 <div class="col-lg-12">
-
-                                                    {{-- This is the cart items section --}}
+                                                    {{-- {{ $cartData = App\Models\Cart::where('user_id', auth()->user()->id)->get() }} --}}
+                                                    {{-- {{$cartData->products()}} --}}
                                                     <div class="card col-md-12 mb-3 p-0">
                                                         <div style="margin: 0%; padding:0%;" class="card-body w-50">
-                                                            <div style="width:200px"
-                                                                class="d-flex justify-content-between">
 
-                                                                <div
-                                                                    class="d-flex flex-row align-items-center col-md-12">
+                                                            @if (auth()->user())
+                                                            @foreach (App\Models\Cart::where('user_id', auth()->user()->id)->get() as $item)
+                                                            @if ($product = App\Models\Product::find($item->product_id))
+                                                                
+                                                                
+                                                                {{-- This is the cart items section --}}
+                                                            <div style="width:200px" class="d-flex justify-content-between align-items-center mb-3">
+                                                                <div class="d-flex flex-row align-items-center col-md-12">
                                                                     <div>
-                                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                                                        <img width="200px" height="50px" src="images/{{$product->image}}"
                                                                             class=" rounded-3" alt="Shopping item"
                                                                             style="width: 55px;">
                                                                     </div>
                                                                     <div class="ms-3">
-                                                                        <p style="width:100px">Iphone 11
-                                                                            pjhjkhhjhrkjkgfgfgfgdfgfgfgjkjkjkkjjho</p>
+                                                                        <p style="display:inline; width:100px">{{$product->name}}</p>
                                                                         {{-- <p class="small mb-0">256GB, Navy Blue</p> --}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex flex-row align-items-center">
                                                                     <div style="width: 50px;">
-                                                                        <h5 class="fw-normal mb-0">2</h5>
+                                                                        <h5 class="fw-normal mb-0">{{$item->quantity}}</h5>
                                                                     </div>
                                                                     <div style="width: 80px;">
-                                                                        <h5 class="mb-0">$900</h5>
+                                                                        <h5 class="mb-0">${{$product->price}}</h5>
                                                                     </div>
-                                                                    <a href="#!" style="color: #cecece;"><i
-                                                                            class="fas fa-trash-alt"></i></a>
+                                                                    <form method="GET" action="/delete-cart-item/{{$product->id}}">
+                                                                        <button type="submit" style="border: none" class="fas fa-trash-alt text-danger ms-3"></button>
+                                                                    </form>
+                                                                    {{-- <a href="#!" style="color: #f90404;"><i
+                                                                            class="fas fa-trash-alt"></i></a> --}}
                                                                 </div>
                                                             </div>
+                                                            @endif
+                                                            @endforeach
+                                                            @else 
+                                                            <div class="d-flex justify-content-center mb-3">
+                                                                <p>Your cart is empty now !!</p>
+                                                            </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                     {{-- end cart items --}}

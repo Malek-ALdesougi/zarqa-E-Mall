@@ -16,12 +16,14 @@ class Cart extends Model
     ];
 
 
-    public function products(){
+    public function products()
+    {
         return $this->hasMany(Product::class);
     }
 
-// ?? not sure from this realtion
-    public function orderDetails(){
+    // ?? not sure from this realtion
+    public function orderDetails()
+    {
         return $this->hasMany(OrderDetail::class);
     }
 }

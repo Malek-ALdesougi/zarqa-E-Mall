@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Store;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,21 +21,25 @@ class Product extends Model
     ];
 
 
-    public function stores(){
+    public function stores()
+    {
         return $this->belongsTo(Store::class);
     }
 
 
-    public function carts(){
+    public function carts()
+    {
         return $this->belongsTo(Cart::class);
     }
 
 
-    public function orderDetails(){
+    public function orderDetails()
+    {
         return $this->belongsTo(OrderDetail::class);
     }
 
-    public function orders(){
+    public function orders()
+    {
         return $this->belongsToMany(Order::class);
     }
 }

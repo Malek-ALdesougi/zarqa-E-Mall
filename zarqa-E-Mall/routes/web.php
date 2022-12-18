@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\storesController;
+use App\Models\Cart;
 use App\Models\Store;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -65,7 +66,7 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 
 
-// owner page routes------------------------------------
+// owner page routes--------------------------------------------------------------------------
 
 // i have did this in the controllor because i just can... also this route need to access it from differnt pages 
 Route::get('/owner', function () {
@@ -76,10 +77,13 @@ Route::get('/owner', function () {
 
 Route::post('/add-product', [ProductController::class, 'store']);
 Route::delete('delete/{id}', [ProductController::class, 'destroy']);
-// end owner page routes----------------------
+// end owner page routes-----------------------------------------------------------------------
 
 
-//route hanel show specific store
+//delete cart items route
+Route::get('/delete-cart-item/{id}', [CartController::class, 'destroy']);
+
+//route handel show specific store
 Route::get('/store/{id}', [storesController::class, 'show']);
 
 //add to cart route
