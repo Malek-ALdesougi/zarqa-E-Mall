@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+@include('sweetalert::alert')
 
     <!-- ======= Our store Section ======= -->
     @if (session('success'))

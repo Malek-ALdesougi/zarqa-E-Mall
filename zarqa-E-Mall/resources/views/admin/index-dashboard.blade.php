@@ -3,6 +3,8 @@
 
 
 @section('content')
+@include('sweetalert::alert')
+
 <div class="container-xxl flex-grow-1 container-p-y">
 
 <div class="col-lg-12 col-md-4 order-1">

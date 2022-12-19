@@ -3,7 +3,7 @@
 
 
 @section('content')
-
+@include('sweetalert::alert')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <h5 class="card-header">Pendings Stores Request</h5>

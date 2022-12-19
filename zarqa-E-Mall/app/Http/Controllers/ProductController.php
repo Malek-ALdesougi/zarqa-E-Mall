@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -91,7 +92,7 @@ class ProductController extends Controller
         // $stoeId = Auth::user()->stores->id;
         // $StoreProducts = Product::all()->where('store_id', $stoeId);
         // dd($StoreProducts[0]->name);
-
+        Alert::success('Success', 'Item added successfully');
         return redirect('/owner');
     }
 
@@ -138,7 +139,7 @@ class ProductController extends Controller
     public function destroy(Product $product, $id)
     {
         Product::where('id', $id)->delete();
-
+        Alert::success('Success', 'Item deleted successfully');
         return redirect('/owner')->with('success', 'The product has been deleted !!');
     }
 }

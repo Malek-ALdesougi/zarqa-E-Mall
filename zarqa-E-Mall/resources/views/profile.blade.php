@@ -3,6 +3,7 @@
 
 
 @section('content')
+@include('sweetalert::alert')
 
 
 

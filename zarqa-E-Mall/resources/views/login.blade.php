@@ -3,6 +3,8 @@
 
 
 @section('content')
+@include('sweetalert::alert')
+
 
     {{-- -------------------------------- Login form ---------------------------- --}}
     <section class="vh-100" style="background-color: #223b4b;">

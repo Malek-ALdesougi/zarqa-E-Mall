@@ -3,6 +3,8 @@
 
 
 @section('content')
+@include('sweetalert::alert')
+
 {{-- <div class="container"> --}}
  <div style="background-color:#223b4b; padding-top:110px">
 

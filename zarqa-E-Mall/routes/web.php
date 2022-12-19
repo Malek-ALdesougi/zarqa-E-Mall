@@ -80,21 +80,35 @@ Route::delete('delete/{id}', [ProductController::class, 'destroy']);
 // end owner page routes-----------------------------------------------------------------------
 
 
-//delete cart items route
-Route::get('/delete-cart-item/{id}', [CartController::class, 'destroy']);
-
 //route handel show specific store
 Route::get('/store/{id}', [storesController::class, 'show']);
 
 //add to cart route
 Route::post('/add-cart/{id}', [CartController::class, 'store']);
 
+//delete cart items route
+Route::get('/delete-cart-item/{id}', [CartController::class, 'destroy']);
+
+//delete checkout item route
+Route::get('/delete-checkout-item/{id}', [CartController::class, 'deleteItem']);
+
+
+// checkout route and send the total price with it its much easier !!
+Route::get('/checkout', function () {
+    $totalPrice = 0;
+    $allProducts = Cart::all();
+    foreach ($allProducts as $product) {
+        // dd($product->quantity);
+        $original = Product::find($product->product_id);
+        $totalPrice = $totalPrice + ($original->price * $product->quantity);
+    }
+    return view('checkout', ['totalPrice' => $totalPrice]);
+});
+
+
 
 Route::get('/profile', function () {
     return view('profile');
-});
-Route::get('/checkout', function () {
-    return view('checkout');
 });
 
 

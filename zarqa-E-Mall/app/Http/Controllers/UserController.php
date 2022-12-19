@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -70,6 +71,7 @@ class UserController extends Controller
         $newUser->password = Hash::make($request->password);
 
         $newUser->save();
+        Alert::success('Done', 'Register done successfully');
         Auth::login($newUser);
 
         return redirect('/index');
@@ -132,6 +134,7 @@ class UserController extends Controller
         $newStore->description = $request->description;
 
         Auth::login($newOwner);
+        Alert::success('Done', 'Register done successfully');
         $newStore->save();
 
         return redirect('/owner');
@@ -155,15 +158,18 @@ class UserController extends Controller
         if (auth::attempt($credentials)) {
 
             if (Auth::user()->roll == 'user') {
+                Alert::success('done', 'You are logedin now !!');
                 $request->session()->regenerate();
                 return redirect('/index');
             } elseif (Auth::user()->roll == 'owner') {
                 // $stores = Auth::user()->stores;
                 // $owner = Auth::user();
+                Alert::success('done', 'You are logedin now !!');
                 $request->session()->regenerate();
                 return redirect('/owner');
             }
         } else {
+        
             // dd($request->email);
             return back()->with('error', 'البريد الإلكتروني أو كلمة المرور أو كلاهما غير صحيح');
         }

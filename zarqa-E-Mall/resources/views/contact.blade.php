@@ -1,5 +1,7 @@
 @extends('layout.master')
 @section('new-class', 'second-nav')
+@include('sweetalert::alert')
+
 
     <!-- ======= Contact Section ======= -->
     <section class="contact mt-5 mb-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">

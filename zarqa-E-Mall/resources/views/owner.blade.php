@@ -4,6 +4,8 @@
 
 
 @section('content')
+@include('sweetalert::alert')
+
 
     <section style="background-color: #eee;">
         <div class="container py-5">
