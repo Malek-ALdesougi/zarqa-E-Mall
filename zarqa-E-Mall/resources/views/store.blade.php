@@ -148,7 +148,10 @@
                                     action="/add-cart/{{ $product->id }}" method="POST">
                                     @csrf
                                     <div class="d-flex justify-content-evenly mb-2">
+                                        @if (auth()->user())
+                                        
                                         <input name="current_user" type="hidden" value="{{ Auth::user()->id }}">
+                                        @endif
                                         <input name="quantity" id="quantity" class="w-25" type="number"
                                             placeholder="1">
                                         <label class="my-font" for="quantity">الكمية المطلوبة</label>

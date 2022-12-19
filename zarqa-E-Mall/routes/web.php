@@ -44,7 +44,7 @@ Route::get('/contact', function () {
 
 
 
-// MAIN ROUTES FOR LOGIN AND REGISTER-----------------
+// <<<<<<<<<<<<<<<<<<<-------MAIN ROUTES FOR LOGIN AND REGISTER-------->>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //route to show the register page
 Route::get('/register', function () {
@@ -56,28 +56,33 @@ Route::post('/register-owner', [UserController::class, 'ownerRegister']);
 //route to show the login page
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
+
 Route::get('/login-user', [UserController::class, 'login']);
 
 // Logout route
 Route::get('/logout', [UserController::class, 'logout']);
 
+// <<<<<<<<<<<<<<<<<<<------- END MAIN ROUTES FOR LOGIN AND REGISTER-------->>>>>>>>>>>>>>>>>>>>>>>
 
 
 
 
-// owner page routes--------------------------------------------------------------------------
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---------owner page routes---------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // i have did this in the controllor because i just can... also this route need to access it from differnt pages 
 Route::get('/owner', function () {
     $stoeId = Auth::user()->stores->id;
     $StoreProducts = Product::all()->where('store_id', $stoeId);
     return view('/owner', ['store' => Auth::user()->stores, 'owner' => Auth::user(), 'products' => $StoreProducts]);
-});
+})->middleware('can:isOwner');
+Route::post('/add-product', [ProductController::class, 'store'])->middleware('can:isOwner');
+Route::delete('delete/{id}', [ProductController::class, 'destroy'])->middleware('can:isOwner');
 
-Route::post('/add-product', [ProductController::class, 'store']);
-Route::delete('delete/{id}', [ProductController::class, 'destroy']);
-// end owner page routes-----------------------------------------------------------------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---------owner page routes---------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 
 //route handel show specific store
@@ -109,23 +114,30 @@ Route::get('/checkout', function () {
 
 Route::get('/profile', function () {
     return view('profile');
+})->middleware('can:isUser');
+
+
+//<<<<<<<<<<<<<<<<<<<<<<----------- DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::middleware('can:isAdmin')->group(function () {
+
+    Route::get('/index-dashboard', function () {
+        return view('admin.index-dashboard');
+    });
+
+    Route::get('users', function () {
+        return view('admin.users');
+    });
+
+    Route::get('stores', function () {
+        return view('admin.stores');
+    });
+
+    Route::get("pendings", function () {
+        return view('admin.pendings');
+    });
 });
+//<<<<<<<<<<<<<<<<<<<<<<----------- END DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
-//--------------///////////////////////// DASHBOARD //////////////////////------------//
-Route::get('index-dashboard', function () {
-    return view('admin.index-dashboard');
-});
 
-Route::get('users', function () {
-    return view('admin.users');
-});
-
-Route::get('stores', function () {
-    return view('admin.stores');
-});
-
-Route::get("pendings", function () {
-    return view('admin.pendings');
-});

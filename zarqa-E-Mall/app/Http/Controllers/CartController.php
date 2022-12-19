@@ -7,7 +7,6 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
-// use RealRashid\SweetAlert\Facades\Alert; 
 
 class CartController extends Controller
 {
@@ -50,7 +49,7 @@ class CartController extends Controller
         $cart->product_id = $product->id;
         $cart->quantity = $quantity;
 
-        Alert::success('Success', 'Item added to cart successfully :)');
+        Alert::success('نجاح', 'تم إضافة المنتج الى السلة بنجاح :)');
         $cart->save();
         return back();
     }
@@ -97,7 +96,7 @@ class CartController extends Controller
     public function destroy(Cart $cart,$id)
     {
         Cart::where('product_id', $id)->delete();
-        Alert::success('Success', 'Item deleted successfully');
+        Alert::success('نجاح', 'تم حذف المنتج بنجاح');
         return back()->with('Success', 'item deleted successfully');
     }
 
@@ -105,7 +104,7 @@ class CartController extends Controller
     {
         // dd($id);
         Cart::where('id', $id)->delete();
-        Alert::success('Success', 'Item deleted successfully');
+        Alert::success('نجاح', 'تم حذف المنتج بنجاح');
         return back();
     }
 }

@@ -11,11 +11,6 @@
         <div class="container py-5">
             {{-- user information card --}}
             <div class="row">
-                @if (session('success'))
-                    <script type="text/javascript">
-                        alert('Product has beed deleted successfully !!');
-                    </script>
-                @endif
                 <div class="col-lg-4">
                     <div class="card mb-5">
                         {{-- {{Auth::user()->stores->name}} --}}

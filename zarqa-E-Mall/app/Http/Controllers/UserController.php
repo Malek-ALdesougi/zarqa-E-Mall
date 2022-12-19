@@ -71,7 +71,7 @@ class UserController extends Controller
         $newUser->password = Hash::make($request->password);
 
         $newUser->save();
-        Alert::success('Done', 'Register done successfully');
+        Alert::success('أهلا وسهلا', 'تمت عملية التسجيل بنجاح');
         Auth::login($newUser);
 
         return redirect('/index');
@@ -134,7 +134,7 @@ class UserController extends Controller
         $newStore->description = $request->description;
 
         Auth::login($newOwner);
-        Alert::success('Done', 'Register done successfully');
+        Alert::success('أهلا وسهلا', 'تمت عملية التسجيل بنجاح');
         $newStore->save();
 
         return redirect('/owner');
@@ -158,15 +158,18 @@ class UserController extends Controller
         if (auth::attempt($credentials)) {
 
             if (Auth::user()->roll == 'user') {
-                Alert::success('done', 'You are logedin now !!');
+                Alert::success('نجاح', 'لقد قمت بتسجيل الدخول الآن');
                 $request->session()->regenerate();
                 return redirect('/index');
             } elseif (Auth::user()->roll == 'owner') {
                 // $stores = Auth::user()->stores;
                 // $owner = Auth::user();
-                Alert::success('done', 'You are logedin now !!');
+                Alert::success('نجاح', 'لقد قمت بتسجيل الدخول الآن');
                 $request->session()->regenerate();
                 return redirect('/owner');
+            }elseif(Auth::user()->roll == 'admin'){
+                Alert::success('نجاح', 'أهلا مشرف الموقع');
+                return redirect('/index-dashboard');
             }
         } else {
         

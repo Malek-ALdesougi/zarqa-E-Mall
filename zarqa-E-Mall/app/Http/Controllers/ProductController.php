@@ -92,7 +92,7 @@ class ProductController extends Controller
         // $stoeId = Auth::user()->stores->id;
         // $StoreProducts = Product::all()->where('store_id', $stoeId);
         // dd($StoreProducts[0]->name);
-        Alert::success('Success', 'Item added successfully');
+        Alert::success('نجاح', 'تم إضافة المنتج بنجاح');
         return redirect('/owner');
     }
 
@@ -139,7 +139,7 @@ class ProductController extends Controller
     public function destroy(Product $product, $id)
     {
         Product::where('id', $id)->delete();
-        Alert::success('Success', 'Item deleted successfully');
-        return redirect('/owner')->with('success', 'The product has been deleted !!');
+        // Alert::success('Success', 'Item deleted successfully');
+        return redirect('/owner');
     }
 }

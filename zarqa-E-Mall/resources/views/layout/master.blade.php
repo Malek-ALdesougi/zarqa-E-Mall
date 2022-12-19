@@ -75,32 +75,36 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
+                    @can('isUser')
                         <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
                                 style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i>
-                                @if (auth()->user())
+                                @if(auth()->user())
                                     <span id="cartNumber"
                                         class="text-light">{{ App\Models\Cart::where('user_id', auth()->user()->id)->count() }}</span>
                                 @endif
                             </a>
                         </li>
+                    @endcan
                     @auth
                         <li>
                             {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
                             <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
                         </a> --}}
-
+                        @can('isUser')
+                            
                         <li class="dropdown"><a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}"
-                                href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي
-                                <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
-                            </a>
-                            <ul>
-                                <li class="d-flex justify-content-end"><a href="logout"><span class="my-font right">تسجيل
-                                            الخروج</span></a></li>
+                            href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي
+                            <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
+                        </a>
+                        @endcan
+                        <ul>
+                            <li class="d-flex justify-content-end"><a href="logout"><span class="my-font right">تسجيل
+                                الخروج</span></a></li>
                                 {{-- <li><a href="#">Deep Drop Down 2</a></li>
-                              <li><a href="#">Deep Drop Down 3</a></li> --}}
+                                <li><a href="#">Deep Drop Down 3</a></li> --}}
                             </ul>
                         </li>
-                        </li>
+                    </li>
                     @endauth
 
                     @guest
