@@ -125,6 +125,8 @@ Route::get('/delete-order/{id}', [OrderController::class, 'deleteOrder']);
 
 Route::get('/profile', [Controller::class, 'main'])->middleware('can:isUser');
 
+Route::post('/edit-user-profile/{id}', [Controller::class, 'editProfile']);
+
 
 //<<<<<<<<<<<<<<<<<<<<<<----------- DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::middleware('can:isAdmin')->group(function () {

@@ -75,7 +75,8 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    {{-- @can('isUser') --}}
+                    
+                    @cannot('isOwner')
                         <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
                                 style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i>
                                 @if(auth()->user())
@@ -84,7 +85,7 @@
                                 @endif
                             </a>
                         </li>
-                    {{-- @endcan --}}
+                    @endcannot
                     @auth
                         <li>
                             {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
@@ -118,7 +119,7 @@
 
                     <li><a class="{{ str_contains(Request::url(), '/about') ? 'active' : '' }}" href="/about"
                             style="font-family: 'Lemonada', cursive;">من نحن</a></li>
-
+                    
                     <li><a class="{{ str_contains(Request::url(), '/index') ? 'active' : '' }}" href="/index"
                             style="font-family: 'Lemonada', cursive;">الرئيسية</a></li>
                     </li>
@@ -148,7 +149,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {{-- ------------------------ CART START ------------------ --}}
+                    {{------------------------------------------ CART START -----------------------------------------}}
                     <section class="h-100 w-100 h-custom" style="background-color: #1e4356;">
                         <div class="container py-5 h-100">
                             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -157,13 +158,11 @@
                                         <div class="card-body p-4">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    {{-- {{ $cartData = App\Models\Cart::where('user_id', auth()->user()->id)->get() }} --}}
-                                                    {{-- {{$cartData->products()}} --}}
                                                     <div class="card col-md-12 mb-3 p-0">
                                                         <div style="margin: 0%; padding:0%;" class="card-body w-50">
-
+                                                           
                                                             @if (auth()->user())
-                                                                @foreach (App\Models\Cart::where('user_id', auth()->user()->id)->get() as $item)
+                                                                @forelse (App\Models\Cart::where('user_id', auth()->user()->id)->get() as $item)
                                                                     @if ($product = App\Models\Product::find($item->product_id))
                                                                         {{-- This is the cart items section --}}
                                                                         <div style="width:200px"
@@ -203,13 +202,13 @@
                                                                             </div>
                                                                         </div>
                                                                     @else
-                                                                        {{-- <div style="width:200px" class="d-flex justify-content-center align-items-center mb-3"> --}}
-                                                                        <p class="d-block text-dark fw-bolder">Your
-                                                                            cart is empty now !! Add some items to them
-                                                                            right here </p>
-                                                                        {{-- </div> --}}
                                                                     @endif
-                                                                @endforeach
+                                                                    
+                                                                    @empty
+                                                                    {{-- <div style="width:200px" class="d-flex justify-content-center align-items-center mb-3"> --}}
+                                                                    <p class="text-dark d-inline my-font fw-bolder">السلة فارغة حاليا</p>
+                                                                    {{-- </div> --}}
+                                                                @endforelse
                                                             @endif
                                                         </div>
                                                     </div>

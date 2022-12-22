@@ -61,7 +61,7 @@ class OrderController extends Controller
                 $orderDetail = new OrderDetail;
                 $orderDetail->order_id = $order->id;
                 $orderDetail->product_id = $product->product_id;
-                $orderDetail->user_id = 48;
+                $orderDetail->user_id = auth()->user()->id;
                 $orderDetail->save();
             }
 

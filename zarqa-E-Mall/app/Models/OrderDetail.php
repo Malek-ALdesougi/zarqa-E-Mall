@@ -16,15 +16,15 @@ class OrderDetail extends Model
     ];
 
     
-    public function products(){
-        return $this->hasMany(product::class);
+    public function Product(){
+        return $this->belongsTo(product::class);
     }
 
     public function carts(){
         return $this->belongsTo(Cart::class);
     }
 
-    public function orders()
+    public function Order()
     {
         return $this->belongsTo(Order::class);
     }

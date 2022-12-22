@@ -6,11 +6,13 @@
 @endsection
 
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <!-- ======= Our store Section ======= -->
     @if (session('success'))
-        <script>alert('product added successfully !!')</script>
+        <script>
+            alert('product added successfully !!')
+        </script>
     @endif
     <section class="breadcrumbs">
         <div class="container">
@@ -149,15 +151,15 @@
                                     @csrf
                                     <div class="d-flex justify-content-evenly mb-2">
                                         @if (auth()->user())
-                                        
-                                        <input name="current_user" type="hidden" value="{{ Auth::user()->id }}">
+                                            <input name="current_user" type="hidden" value="{{ Auth::user()->id }}">
                                         @endif
                                         <input name="quantity" id="quantity" class="w-25" type="number"
                                             placeholder="1">
                                         <label class="my-font" for="quantity">الكمية المطلوبة</label>
                                     </div>
 
-                                    <button style="background-color: #1e4356; color:white" type="submit" class="btn col-md-12">
+                                    <button style="background-color: #1e4356; color:white" type="submit"
+                                        class="btn col-md-12">
                                         <span class="my-font text-light my-color">أضف إلى السلة</span>
                                         <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
                                     </button>
@@ -184,11 +186,8 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><span
-                                        class="my-font text-light my-color">إغلاق</span></button>
-                                {{-- <button style="background-color: #1e4356; color:white" type="button" class="btn">
-                                    <span class="my-font text-light my-color">أضف إلى السلة</span>
-                                    <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
-                                </button> --}}
+                                        class="my-font text-light my-color">إغلاق</span>
+                                </button>
                             </div>
                         </div>
                     </div>

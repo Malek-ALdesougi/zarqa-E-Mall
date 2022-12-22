@@ -15,15 +15,17 @@ class Order extends Model
     ];
 
 
-    public function products(){
+    public function products()
+    {
         return $this->belongsToMany(Product::class);
     }
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function orderDetails()
+    public function OrderDetail()
     {
         return $this->hasMany(OrderDetail::class);
     }

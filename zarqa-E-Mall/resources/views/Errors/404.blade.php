@@ -19,7 +19,7 @@
                 <p class="lead text-light">
                     The page you’re looking for doesn’t exist.
                   </p>
-                <a href="index" class="btn btn-light"><span class='fw-bolder' style='color:#14435c'>Go Home</span></a>
+                <a href="/index" class="btn btn-light"><span class='fw-bolder' style='color:#14435c'>Go Home</span></a>
             </div>
         </div>
     </body>
