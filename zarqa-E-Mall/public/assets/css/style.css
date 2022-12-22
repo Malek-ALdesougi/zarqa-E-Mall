@@ -2494,7 +2494,19 @@ section {
 }
 
 
-/* login form styling */
+/* inpt quantity styling */
+
+#quantity{
+  border-radius: 10px;
+  border-color: #4b9ab9;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  text-align: center;
+}
 
 
 

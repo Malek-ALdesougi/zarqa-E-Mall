@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-            $table->foreignId('cart_id')->constrained('carts')->onDelete('cascade');
+            $table->foreignId('cart_id')->constrained('carts')->onDelete('cascade')->nullable();
             //NOT SURE OF ADDING THE CART_ID AS A FOREIGN KEY HERE !!!!!
             $table->timestamps();
         });

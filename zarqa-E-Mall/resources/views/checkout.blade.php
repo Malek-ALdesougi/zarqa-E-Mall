@@ -3,7 +3,7 @@
 
 
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <div style="margin-top:100px; margin-bottom:200px"
         class="container col-md-12 mb-5 d-flex jutify-content-center flex-wrap">
@@ -34,8 +34,9 @@
                                         <tr class="align-items-center">
                                             <td>
                                                 <div class="">
-                                                    <form method="GET" action="/delete-checkout-item/{{$item->id}}">
-                                                        <button type="submit" class="bx bx-trash text-danger me-1 border-0 bg-light fs-4 mt-2"></button>
+                                                    <form method="GET" action="/delete-checkout-item/{{ $item->id }}">
+                                                        <button type="submit"
+                                                            class="bx bx-trash text-danger me-1 border-0 bg-light fs-4 mt-2"></button>
                                                     </form>
                                                     {{-- <a class="text-danger fs-4" href="javascript:void(0);"><i
                                                             class="bx bx-trash text-danger me-1"></i></a> --}}
@@ -83,13 +84,13 @@
             <div class="mb-3 d-flex justify-content-end">
                 <h3 class="my-font mb-2"> معلومات الدفع</h3>
             </div>
-            <form>
+            <form  action="/place-order" method="GET">
                 <!-- input -->
                 <div class="form-outline mb-4">
                     <input type="text" id="form4Example1" class="form-control" />
                     <label class="form-label" for="form4Example1">رقم البطاقة</label>
                 </div>
-
+                <input name="userId" type="hidden" value="{{auth()->user()->id}}">
                 <!--  input -->
                 <div class="form-outline mb-4">
                     <input type="date" id="form4Example2" class="form-control" />
@@ -118,9 +119,9 @@
                 </div> --}}
 
                 <!-- Submit button -->
-                <button style="background-color:#1e4356; color:white" type="submit" class="btn btn-block mb-4">
-                    <p class="my-font d-inline">إرسال الطلب</p>
-                </button>
+                    <button type="submit" style="background-color:#1e4356; color:white" class="btn btn-block mb-4">
+                        <p class="my-font d-inline">إرسال الطلب</p>
+                    </button>
             </form>
         </div>
     </div>

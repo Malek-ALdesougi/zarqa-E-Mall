@@ -37,6 +37,10 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        if(!auth()->user()){
+            Alert::info('ملاحظة', 'الإضافة إلى السلة تتطلب تسجيل الدخول');
+            return redirect('/login');
+        }
         $product = Product::find($request->id);
         $user = User::find($request->current_user);
         $quantity = $request->quantity;

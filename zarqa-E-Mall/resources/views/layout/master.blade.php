@@ -75,7 +75,7 @@
             <nav id="navbar" class="navbar">
                 <i class="bi bi-list mobile-nav-toggle"></i>
                 <ul>
-                    @can('isUser')
+                    {{-- @can('isUser') --}}
                         <li><a data-mdb-toggle="modal" data-mdb-target="#staticBackdropp" href=""
                                 style="font-family: 'Lemonada', cursive;">السلة<i class="fas fa-shopping-cart"></i>
                                 @if(auth()->user())
@@ -84,7 +84,7 @@
                                 @endif
                             </a>
                         </li>
-                    @endcan
+                    {{-- @endcan --}}
                     @auth
                         <li>
                             {{-- <a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}" href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي 
@@ -93,12 +93,12 @@
                         @can('isUser')
                             
                         <li class="dropdown"><a class="{{ str_contains(Request::url(), '/profile') ? 'active' : '' }}"
-                            href="profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي
+                            href="/profile" style="font-family: 'Lemonada', cursive;">الملف الشخصي
                             <i class="fa-solid fs-6 fa-user text-light ms-2"></i>
                         </a>
                         @endcan
                         <ul>
-                            <li class="d-flex justify-content-end"><a href="logout"><span class="my-font right">تسجيل
+                            <li class="d-flex justify-content-end"><a href="/logout"><span class="my-font right">تسجيل
                                 الخروج</span></a></li>
                                 {{-- <li><a href="#">Deep Drop Down 2</a></li>
                                 <li><a href="#">Deep Drop Down 3</a></li> --}}
@@ -172,7 +172,7 @@
                                                                                 class="d-flex flex-row align-items-center col-md-12">
                                                                                 <div>
                                                                                     <img width="200px" height="50px"
-                                                                                        src="images/{{ $product->image }}"
+                                                                                        src="images/{{$product->image}}"
                                                                                         class=" rounded-3"
                                                                                         alt="Shopping item"
                                                                                         style="width: 55px;">

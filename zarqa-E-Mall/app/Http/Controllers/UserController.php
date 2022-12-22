@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -67,7 +68,14 @@ class UserController extends Controller
         $newUser->email = $request->email;
         $newUser->address = $request->address;
         $newUser->phone = $request->phone;
-        $newUser->image = base64_encode(file_get_contents($request->file('image')));
+        // $newUser->image = base64_encode(file_get_contents($request->file('image')));
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $fileName = time() . '.' . $extention;
+            $file->move('images/', $fileName);
+            $newUser->image = $fileName;
+        }
         $newUser->password = Hash::make($request->password);
 
         $newUser->save();
@@ -116,11 +124,11 @@ class UserController extends Controller
         $newOwner->address = $request->store_address;
         $newOwner->phone = $request->owner_phone;
         // $newOwner->image = base64_decode(file_get_contents($request->file('store_image')));
-        if($request->hasFile('store_image')){
+        if ($request->hasFile('store_image')) {
             $file = $request->file('store_image');
             $extention = $file->getClientOriginalExtension();
-            $fileName = time().'.' . $extention;
-            $file->move('images/',$fileName);
+            $fileName = time() . '.' . $extention;
+            $file->move('images/', $fileName);
             $newOwner->image = $fileName;
         }
         $newOwner->password = Hash::make($request->owner_password);
@@ -167,12 +175,12 @@ class UserController extends Controller
                 Alert::success('نجاح', 'لقد قمت بتسجيل الدخول الآن');
                 $request->session()->regenerate();
                 return redirect('/owner');
-            }elseif(Auth::user()->roll == 'admin'){
+            } elseif (Auth::user()->roll == 'admin') {
                 Alert::success('نجاح', 'أهلا مشرف الموقع');
                 return redirect('/index-dashboard');
             }
         } else {
-        
+
             // dd($request->email);
             return back()->with('error', 'البريد الإلكتروني أو كلمة المرور أو كلاهما غير صحيح');
         }
@@ -227,10 +235,11 @@ class UserController extends Controller
 
     public function logout()
     {
-
+        //empty the cart after the user logout even without done purchase !!!
+        // DB::table('carts')->delete();
         Auth::logout();
         Session::flush();
 
-        return redirect('index');
+        return redirect('/index');
     }
 }

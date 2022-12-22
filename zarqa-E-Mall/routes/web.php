@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\OrderController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -100,8 +102,14 @@ Route::get('/delete-checkout-item/{id}', [CartController::class, 'deleteItem']);
 
 // checkout route and send the total price with it its much easier !!
 Route::get('/checkout', function () {
+
+    if(!auth()->user()){
+        Alert::error('اللإنتقال للدفع يتطلب تسجيل الدخول ');
+        return redirect('/login');
+    }
+
     $totalPrice = 0;
-    $allProducts = Cart::all();
+    $allProducts = Cart::where('user_id',auth()->user()->id)->get();
     foreach ($allProducts as $product) {
         // dd($product->quantity);
         $original = Product::find($product->product_id);
@@ -110,11 +118,12 @@ Route::get('/checkout', function () {
     return view('checkout', ['totalPrice' => $totalPrice]);
 });
 
+//place order route
+Route::get('/place-order' , [OrderController::class, 'store']);
+Route::get('/delete-order/{id}', [OrderController::class, 'deleteOrder']);
 
 
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware('can:isUser');
+Route::get('/profile', [Controller::class, 'main'])->middleware('can:isUser');
 
 
 //<<<<<<<<<<<<<<<<<<<<<<----------- DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>

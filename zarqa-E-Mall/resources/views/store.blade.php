@@ -157,8 +157,7 @@
                                         <label class="my-font" for="quantity">الكمية المطلوبة</label>
                                     </div>
 
-                                    <button style="background-color: #1e4356; color:white" type="submit"
-                                        class="btn col-md-12">
+                                    <button style="background-color: #1e4356; color:white" type="submit" class="btn col-md-12">
                                         <span class="my-font text-light my-color">أضف إلى السلة</span>
                                         <i style="margin-left:3px;" class="fas fa-shopping-cart"></i>
                                     </button>
