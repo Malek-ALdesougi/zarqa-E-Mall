@@ -23,77 +23,38 @@
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+              @forelse ($pendingStores as $store)
+                  
+              
               <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>أبو محمد اللفتاوي</strong></td>
-                <td>ملبوسات أبو محمد الرائعة</td>
+                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$store->user->name}}</strong></td>
+                <td>{{$store->store_name}}</td>
                 <td>
                     <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                      <img src="https://cdn1.iconfinder.com/data/icons/ui-roundicons/480/circle_store-512.png" alt="Avatar" class="rounded-circle">
+                      <img src="images/{{$store->user->image}}" alt="Avatar" class="rounded-circle">
                     </li>
                 </td>
-                <td><span class="badge bg-label-danger me-1">ملابس وإكسسوارات</span></td>
-                <td>+98555467666</td>
-                <td>شارع السعادة-المربع الثاني -مقهى ابو العز </td>
-                <td> محل اواعي مرتب على كيفك </td>
+                <td><span class="badge bg-label-danger me-1">{{$store->category}}</span></td>
+                <td>{{$store->user->phone}}</td>
+                <td>{{$store->user->address}}</td>
+                <td>{{$store->description}}</td>
     
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-medal me-1 text-success"></i> Accept Store Request</a>
-                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1 text-danger"></i> Reject Request</a>
+                      <a class="dropdown-item" href="/accept-store/{{$store->id}}"><i class="bx bx-medal me-1 text-success"></i> Accept Store Request</a>
+                      <a class="dropdown-item" href=""><i class="bx bx-trash me-1 text-danger"></i> Reject Request</a>
                     </div>
                   </div>
                 </td>
               </tr>
     
-              <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>أبو محمد اللفتاوي</strong></td>
-                <td>ملبوسات أبو محمد الرائعة</td>
-                <td>
-                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                      <img src="https://cdn1.iconfinder.com/data/icons/ui-roundicons/480/circle_store-512.png" alt="Avatar" class="rounded-circle">
-                    </li>
-                </td>
-                <td><span class="badge bg-label-success me-1">أدوات كهربائية</span></td>
-                <td>+98555467666</td>
-                <td>شارع السعادة-المربع الثاني -مقهى ابو العز </td>
-                <td> محل اواعي مرتب على كيفك </td>
-    
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-medal me-1 text-success"></i> Accept Store Request</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1 text-danger"></i> Reject Request</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-    
-              <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>أبو محمد اللفتاوي</strong></td>
-                <td>ملبوسات أبو محمد الرائعة</td>
-                <td>
-                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                      <img src="https://cdn1.iconfinder.com/data/icons/ui-roundicons/480/circle_store-512.png" alt="Avatar" class="rounded-circle">
-                    </li>
-                </td>
-                <td><span class="badge bg-label-warning me-1">مفروشات</span></td>
-                <td>+98555467666</td>
-                <td>شارع السعادة-المربع الثاني -مقهى ابو العز </td>
-                <td> محل اواعي مرتب على كيفك </td>
-    
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-medal me-1 text-success"></i> Accept Store Request</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1 text-danger"></i> Reject Request</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+              @empty
+                  <tr>
+                    <td colspan="7">There is no pending stores at the moment !</td>
+                  </tr>
+              @endforelse
               
             </tbody>
           </table>

@@ -124,6 +124,7 @@ class UserController extends Controller
         $newOwner->address = $request->store_address;
         $newOwner->phone = $request->owner_phone;
         // $newOwner->image = base64_decode(file_get_contents($request->file('store_image')));
+        
         if ($request->hasFile('store_image')) {
             $file = $request->file('store_image');
             $extention = $file->getClientOriginalExtension();
@@ -153,7 +154,7 @@ class UserController extends Controller
     public function login(Request $request)
     {
 
-        $request->validate([
+        $request->validate([ 
             'email' => 'required',
             'password' => 'required',
         ], [

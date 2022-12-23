@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                {{-- -------------------------------------------------- edit the user data modal ----------------------------------------------------------------------------}}
+                {{-- -------------------------------------------------- edit the user data modal -------------------------------------------------------------------------- --}}
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -37,14 +37,15 @@
                                 {{-- <button type="button" class="btn-close d-inline" data-bs-dismiss="modal" aria-label="Close"></button> --}}
                             </div>
                             <div class="modal-body">
-                                <form action="/edit-user-profile/{{auth()->user()->id}}" method="POST">
+                                <form action="/edit-user-profile/{{ auth()->user()->id }}" method="POST">
                                     @csrf
                                     @error('name')
                                         <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                                     @enderror
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label my-font">الإسم</label>
-                                        <input value="{{$currentUser[0]->name}}" type="text" name="name" class="form-control" id="recipient-name">
+                                        <input value="{{ $currentUser[0]->name }}" type="text" name="name"
+                                            class="form-control" id="recipient-name">
                                     </div>
 
 
@@ -52,8 +53,10 @@
                                         <p style="font-size:medium" class="text-danger mb-0 right">{{ $message }}</p>
                                     @enderror
                                     <div class="mb-3">
-                                        <label for="recipient-email" class="col-form-label my-font">البريد الإلكتروني</label>
-                                        <input value="{{$currentUser[0]->email}}" type="text" name="email" class="form-control" id="recipient-email">
+                                        <label for="recipient-email" class="col-form-label my-font">البريد
+                                            الإلكتروني</label>
+                                        <input value="{{ $currentUser[0]->email }}" type="text" name="email"
+                                            class="form-control" id="recipient-email">
                                     </div>
 
 
@@ -62,7 +65,8 @@
                                     @enderror
                                     <div class="mb-3">
                                         <label for="recipient-phone" class="col-form-label my-font">الهاتف</label>
-                                        <input value="{{$currentUser[0]->phone}}" type="text" name="phone" class="form-control" id="recipient-phone">
+                                        <input value="{{ $currentUser[0]->phone }}" type="text" name="phone"
+                                            class="form-control" id="recipient-phone">
                                     </div>
 
 
@@ -71,7 +75,8 @@
                                     @enderror
                                     <div class="mb-3">
                                         <label for="recipient-address" class="col-form-label my-font">العنوان</label>
-                                        <input value="{{$currentUser[0]->address}}" type="text" name="address" class="form-control" id="recipient-address">
+                                        <input value="{{ $currentUser[0]->address }}" type="text" name="address"
+                                            class="form-control" id="recipient-address">
                                     </div>
 
                                     <div class="modal-footer d-flex justify-content-between">
@@ -211,6 +216,7 @@
                                     })">
                                                 <p class="d-inline my-font">حذف</p>
                                             </button>
+                                        </form>
                                     </td>
                                     <td>
                                         {{-- {{ dd($orders) }} --}}
@@ -253,10 +259,12 @@
                                     </div>
                                 </div>
 
-                                @empty
+                            @empty
                                 <tr>
-                                    
-                                    <td colspan="6"><p class="my-font">سجل المشتريات فارغ حاليا</p></td>
+
+                                    <td colspan="6">
+                                        <p class="my-font">سجل المشتريات فارغ حاليا</p>
+                                    </td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -264,15 +272,5 @@
                 </div>
             </div>
         </div>
-
     </section>
-
-
-
-
-
-
-
-
-
 @endsection

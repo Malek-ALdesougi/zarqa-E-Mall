@@ -54,6 +54,9 @@
 
     <link rel="stylesheet" href="public-admin/assets/vendor/libs/apex-charts/apex-charts.css" />
 
+      {{-- sweet alert style --}}
+      <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -217,7 +220,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">{{auth()->user()->name}}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -227,9 +230,9 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="/logout-admin">
                         <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
+                       <span class="align-middle">Log Out</span>
                       </a>
                     </li>
                   </ul>
@@ -248,6 +251,7 @@
     
 
     <!-- Core JS -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- build:js assets/vendor/js/core.js -->
     <script src="public-admin/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="public-admin/assets/vendor/libs/popper/popper.js"></script>
@@ -268,5 +272,7 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {{-- sweet alert cnd --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\OrderController;
@@ -103,13 +104,13 @@ Route::get('/delete-checkout-item/{id}', [CartController::class, 'deleteItem']);
 // checkout route and send the total price with it its much easier !!
 Route::get('/checkout', function () {
 
-    if(!auth()->user()){
+    if (!auth()->user()) {
         Alert::error('اللإنتقال للدفع يتطلب تسجيل الدخول ');
         return redirect('/login');
     }
 
     $totalPrice = 0;
-    $allProducts = Cart::where('user_id',auth()->user()->id)->get();
+    $allProducts = Cart::where('user_id', auth()->user()->id)->get();
     foreach ($allProducts as $product) {
         // dd($product->quantity);
         $original = Product::find($product->product_id);
@@ -119,36 +120,31 @@ Route::get('/checkout', function () {
 });
 
 //place order route
-Route::get('/place-order' , [OrderController::class, 'store']);
+Route::get('/place-order', [OrderController::class, 'store']);
 Route::get('/delete-order/{id}', [OrderController::class, 'deleteOrder']);
 
 
 Route::get('/profile', [Controller::class, 'main'])->middleware('can:isUser');
+Route::post('/edit-user-profile/{id}', [Controller::class, 'editProfile'])->middleware('can:isUser');
 
-Route::post('/edit-user-profile/{id}', [Controller::class, 'editProfile']);
 
-
-//<<<<<<<<<<<<<<<<<<<<<<----------- DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<----------- DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::middleware('can:isAdmin')->group(function () {
 
-    Route::get('/index-dashboard', function () {
-        return view('admin.index-dashboard');
-    });
+    
+    Route::get('/index-dashboard', [adminController::class, 'index']);
+    
+    Route::get('users', [adminController::class, 'show']);
+    Route::post('/admin-edit-user/{id}', [adminController::class, 'edit']);
+    Route::get('delete-user/{user}', [adminController::class, 'destroy']);
+    
+    Route::get('stores', [adminController::class, 'showStores']);
+    Route::get('/delete-store/{id}', [adminController::class, 'deleteStore']);
+    Route::post('/admin-edit-user/{id}', [adminController::class, 'editStore']);
+    
+    Route::get("pendings", [adminController::class, 'showPendingStores']);
+    Route::get('/accept-store/{id}', [adminController::class, 'acceptStore']);
 
-    Route::get('users', function () {
-        return view('admin.users');
-    });
-
-    Route::get('stores', function () {
-        return view('admin.stores');
-    });
-
-    Route::get("pendings", function () {
-        return view('admin.pendings');
-    });
+    Route::get('/logout-admin', [adminController::class, 'logoutAdmin']);
 });
 //<<<<<<<<<<<<<<<<<<<<<<----------- END DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-
-
