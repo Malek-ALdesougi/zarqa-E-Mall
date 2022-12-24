@@ -42,7 +42,7 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
-    public function message()
+    public function userMessage()
     {
         return $this->hasMany(UserMessage::class);
     }

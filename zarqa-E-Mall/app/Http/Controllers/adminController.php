@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Store;
 use App\Models\User;
+use App\Models\UserMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -20,13 +21,6 @@ class adminController extends Controller
      */
     public function index()
     {
-        $statistics = [
-            'users' => User::where('roll', 'user')->count(),
-            'stores' => Store::all()->count(),
-            'products' => Product::all()->count(),
-            'orders' => Order::all()->count()
-        ];
-        // dd($statistics);
 
         return view('admin.index-dashboard', array(
             'users' => User::where('roll', 'user')->count(),
@@ -39,7 +33,7 @@ class adminController extends Controller
     public function showPendingStores()
     {
         $pendingStores = Store::where('status', 0)->get();
-        
+
         return view('admin.pendings', compact('pendingStores'));
     }
 
@@ -47,7 +41,7 @@ class adminController extends Controller
     {
         $acceptedStore = Store::find($id);
         // dd($acceptedStore);
-        $acceptedStore->status = 1 ;
+        $acceptedStore->status = 1;
         $acceptedStore->update();
 
         Alert::success('Done', 'Store has been accepted successfully');
@@ -151,5 +145,21 @@ class adminController extends Controller
         Session::flush();
 
         return redirect('login');
+    }
+
+    public function userMessages()
+    {
+        $allUsersMessages = UserMessage::all();
+
+        // dd($allUsersMessages[0]->user);
+        return view('admin.user-messages', compact('allUsersMessages'));
+    }
+
+    public function deleteUserMessage($id)
+    {
+        $deletedMessage = UserMessage::find($id);
+        $deletedMessage->delete();
+
+        return back();
     }
 }

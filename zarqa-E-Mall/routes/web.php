@@ -40,8 +40,15 @@ Route::get('/about', function () {
 });
 
 Route::get('/contact', function () {
-    return view('/contact');
+    if(auth()->user()){
+        return view('/contact');
+    }else{
+        Alert::info('ملاحطة', '!! تسجيل الدخول مطلوب للتواصل معنا ');
+        return redirect('/login');
+    }
 });
+
+Route::post('/userContactMessage/{id}', [UserController::class, 'contactMessage']);
 
 
 
@@ -131,20 +138,24 @@ Route::post('/edit-user-profile/{id}', [Controller::class, 'editProfile'])->midd
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<----------- DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::middleware('can:isAdmin')->group(function () {
 
-    
+
     Route::get('/index-dashboard', [adminController::class, 'index']);
-    
+
     Route::get('users', [adminController::class, 'show']);
     Route::post('/admin-edit-user/{id}', [adminController::class, 'edit']);
     Route::get('delete-user/{user}', [adminController::class, 'destroy']);
-    
+
     Route::get('stores', [adminController::class, 'showStores']);
     Route::get('/delete-store/{id}', [adminController::class, 'deleteStore']);
     Route::post('/admin-edit-user/{id}', [adminController::class, 'editStore']);
-    
+
     Route::get("pendings", [adminController::class, 'showPendingStores']);
     Route::get('/accept-store/{id}', [adminController::class, 'acceptStore']);
 
     Route::get('/logout-admin', [adminController::class, 'logoutAdmin']);
+
+    Route::get('/messages', [adminController::class, 'userMessages']);
+    //delete user message
+    Route::get('/delete-user-message/{id}', [adminController::class, 'deleteUserMessage']);
 });
-//<<<<<<<<<<<<<<<<<<<<<<----------- END DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<----------- END DASHBOARD ------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

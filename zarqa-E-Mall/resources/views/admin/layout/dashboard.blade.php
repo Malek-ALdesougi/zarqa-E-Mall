@@ -141,14 +141,14 @@
 
           <ul class="menu-inner py-1">
             <!----------------------- Dashboard ---------------------->
-            <li class="menu-item {{str_contains(Request::url(), '/index-dashboard') ? 'active' : ''}}">
+            <li class="menu-item {{ str_contains(Request::url(), '/index-dashboard') ? 'active' : '' }}">
               <a href="index-dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
             
-            <li class="menu-item {{str_contains(Request::url(), '/users') ? 'active' : ''}}">
+            <li class="menu-item {{ str_contains(Request::url(), '/users') ? 'active' : '' }}">
               <a href="users" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-user-circle"></i>
                 {{-- <i class='bx bxs-user'></i> --}}
@@ -156,7 +156,7 @@
               </a>
             </li>
 
-            <li class="menu-item {{str_contains(Request::url(), '/stores') ? 'active' : ''}}">
+            <li class="menu-item {{ str_contains(Request::url(), '/stores') ? 'active' : '' }}">
               <a href="stores" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-store"></i>
                 {{-- <i class='bx bxs-store'></i> --}}
@@ -164,11 +164,19 @@
               </a>
             </li>
 
-            <li class="menu-item {{str_contains(Request::url(), '/pendings') ? 'active' : ''}}">
+            <li class="menu-item {{ str_contains(Request::url(), '/pendings') ? 'active' : '' }}">
               <a href="pendings" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-time-five"></i>
                 {{-- <i class='bx bxs-store'></i> --}}
                 <div data-i18n="Analytics">Store Owner Requests</div>
+              </a>
+            </li>
+
+            <li class="menu-item {{ str_contains(Request::url(), '/messages') ? 'active' : '' }}">
+              <a href="/messages" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-message"></i>
+                {{-- <i class='bx bxs-store'></i> --}}
+                <div data-i18n="Analytics">Users Messages</div>
               </a>
             </li>
           </ul>
@@ -220,7 +228,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">{{auth()->user()->name}}</span>
+                            <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>

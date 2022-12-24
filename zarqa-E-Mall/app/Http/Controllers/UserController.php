@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Store;
+use App\Models\UserMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -22,16 +23,30 @@ class UserController extends Controller
     {
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
+    public function contactMessage(Request $request ,$id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email'=> 'required',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+        if(auth()->user()->email !== $request->email){
+            Alert::warning('هوية مجهولة' , 'يرجى إدخال البريد الإلكتروني الخاص بهذا الحساب');
+            return back();
+        }
+        $contactMessage = new UserMessage;
+
+        $contactMessage->user_id = auth()->user()->id;
+        $contactMessage->subject = $request->subject;
+        $contactMessage->message = $request->message;
+
+        $contactMessage->save();
+        Alert::success('نجاح' , 'تم استلام رسالتك بنجاح شكرا... لتواصلك معنا  ');
+        return redirect('/index');
+        
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -124,7 +139,7 @@ class UserController extends Controller
         $newOwner->address = $request->store_address;
         $newOwner->phone = $request->owner_phone;
         // $newOwner->image = base64_decode(file_get_contents($request->file('store_image')));
-        
+
         if ($request->hasFile('store_image')) {
             $file = $request->file('store_image');
             $extention = $file->getClientOriginalExtension();
@@ -154,7 +169,7 @@ class UserController extends Controller
     public function login(Request $request)
     {
 
-        $request->validate([ 
+        $request->validate([
             'email' => 'required',
             'password' => 'required',
         ], [
@@ -187,52 +202,6 @@ class UserController extends Controller
         }
     }
 
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function logout()
     {

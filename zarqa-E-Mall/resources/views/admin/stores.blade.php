@@ -38,7 +38,7 @@
                   <img src="images/{{$store->user->image}}" alt="Avatar" class="rounded-circle">
                 </li>
             </td>
-            <td><span class="badge bg-label-danger me-1">{{$store->category}}</span></td>
+            <td><span class="badge bg-label-primary me-1">{{$store->category}}</span></td>
             <td>{{$store->user->phone}}</td>
             <td>{{$store->user->address}}</td>
             {{-- <td> {{$store->description}}</td> --}}
