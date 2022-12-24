@@ -45,26 +45,26 @@
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="2"
-                        class="purecounter"></span>
+                        class="purecounter my-font fs-4">{{$users}}</span>
                     <span class="my-font fs-6">العملاء</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="555" data-purecounter-duration="1"
-                        class="purecounter"></span>
+                        class="purecounter my-font fs-4">{{$stores}}</span>
                     <span class="my-font fs-6">المتاجر</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="2"
-                        class="purecounter"></span>
+                        class="purecounter my-font fs-4">{{$orders}}</span>
                     <span class="my-font fs-6">إجمالي المبيعات</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="3"
-                        class="purecounter"></span>
-                    <span class="my-font fs-6 fs-6">أجمالي الطلبات</span>
+                    <span data-purecounter-start="4" data-purecounter-end="15" data-purecounter-duration="0"
+                        class="purecounter my-font fs-4">{{$products}}</span>
+                    <span class="my-font fs-6">إجمالي البضائع</span>
                 </div>
 
             </div>

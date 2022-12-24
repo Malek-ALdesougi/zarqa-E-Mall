@@ -7,7 +7,7 @@
     @include('sweetalert::alert')
 
 
-    <section style="background-color: #eee;">
+    <section  style="background-color: #eee; ">
         <div class="container py-5">
             {{-- user information card --}}
             <div class="row">
@@ -16,7 +16,7 @@
                         {{-- {{Auth::user()->stores->name}} --}}
                         <div style="background-color:#1e4356;" class="card-body text-center">
                             {{-- <div class="d-flex justify-content-center"> --}}
-                            <img style="display: block; width:100%; height:324px" src="images/{{ $owner->image }}"
+                            <img style="display: block; width:100%; height:330px" src="images/{{ $owner->image }}"
                                 alt="avhellllatar" class="img-fluid">
                             {{-- </div> --}}
                             <div>
@@ -31,7 +31,7 @@
                                 {{ $owner->phone }}</span>
                             <p class="mb-2 d-inline-block text-light my-font">: الهاتف</p><br>
                             <p class="mb-1 d-inline-block text-light my-font">: الموقع</p>
-                            <div style="font-size:15px; margin-right:7px; margin-bottom:50px;" class="text-light my-font">
+                            <div style="font-size:15px; margin-right:7px; margin-bottom:20px;" class="text-light my-font">
                                 {{ $owner->address }}</div>
                             {{-- <button class="my-font p-2"
                                 style="border-radius:10px; background-color:rgb(74, 177, 74); margin-bottom:60px;">تعديل

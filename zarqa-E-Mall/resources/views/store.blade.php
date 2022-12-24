@@ -119,12 +119,12 @@
 
         @if ($products)
             @foreach ($products as $product)
-                <div class="col-sm-4 col-md-6 col-lg-3">
+                <div class="col-sm-4 col-md-6 col-lg-3 shadow-lg p-3 mb-5 rounded">
                     <div class="card">
                         <img width="300px;" height="200px;" src="../images/{{ $product->image }}" class="card-img-top"
                             alt="...">
                         <div class="card-body">
-                            <h5 class="my-font fw-bolder text-center" class="card-title right">
+                            <h5 class="my-font fw-bolder text-center h-25" class="card-title right">
                                 {{ $product->name }}
                             </h5><br>
                             <div class="justify-content-center flex-wrap">

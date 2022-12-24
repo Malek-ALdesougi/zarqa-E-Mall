@@ -158,7 +158,7 @@ class UserController extends Controller
         $newStore->description = $request->description;
 
         Auth::login($newOwner);
-        Alert::success('أهلا وسهلا', 'تمت عملية التسجيل بنجاح');
+        Alert::success('نجاح', 'تمت عملية التسجيل بنجاح... سوف يتم قبول طلبك من قبل المشرف قريبا ليتم عرض متجرك في في الموقع ');
         $newStore->save();
 
         return redirect('/owner');

@@ -41,11 +41,17 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //get the total price for the current cart and user
+        // dd($request->userId);
         $totalPrice = 0;
         $allProducts = Cart::where('user_id', auth()->user()->id)->get();
+        // dd($allProducts[0]->quantity);
         foreach ($allProducts as $product) {
             $original = Product::find($product->product_id);
             $totalPrice = $totalPrice + ($original->price * $product->quantity);
+
+            // reduce the amount of each product after every purchas 
+            $original->quantity =  $original->quantity - $product->quantity ;
+            $original->update();
         }
 
         // place the order if the total price and userid is available

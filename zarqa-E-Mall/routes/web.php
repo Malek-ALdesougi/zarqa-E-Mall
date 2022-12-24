@@ -1,18 +1,20 @@
 <?php
 
-use App\Http\Controllers\adminController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\OrderController;
+use App\Models\Cart;
+use App\Models\User;
+use App\Models\Order;
+use App\Models\Store;
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\storesController;
-use App\Models\Cart;
-use App\Models\Store;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\storesController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -35,8 +37,13 @@ Route::get('/', function () {
 Route::get('/index', [storesController::class, 'index'])->name('index');
 
 Route::get('/about', function () {
-    Alert::success('Success Title', 'Success Message');
-    return view('/about');
+
+    return view('/about', array(
+        'users' => User::where('roll', 'user')->count(),
+        'stores' => Store::all()->count(),
+        'products' => Product::all()->count(),
+        'orders' => Order::all()->count()
+    ));
 });
 
 Route::get('/contact', function () {
