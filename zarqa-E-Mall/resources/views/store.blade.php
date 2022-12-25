@@ -118,7 +118,7 @@
     <div style="padding-right:0; padding-left:30px;" class="row mt-5 g-4 col-md-12 d-flex justify-content-evenly">
 
         @if ($products)
-            @foreach ($products as $product)
+            @forelse ($products as $product)
                 <div class="col-sm-4 col-md-6 col-lg-3 shadow-lg p-3 mb-5 rounded">
                     <div class="card">
                         <img width="300px;" height="200px;" src="../images/{{ $product->image }}" class="card-img-top"
@@ -192,7 +192,11 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @empty
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <h3 class="my-font">لا يوجد منتجات في هذا المتجر بعد</h3>
+                </div>
+            @endforelse
         @else
             <h1>nothig to show </h1>
         @endif
